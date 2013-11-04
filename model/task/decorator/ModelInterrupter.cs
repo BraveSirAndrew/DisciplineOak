@@ -1,4 +1,4 @@
-/**
+﻿/**
  * An ModelInterrupter is a decorator that controls the termination of a child
  * task. An ModelInterrupter simply lets its child task run normally. If the
  * child returns a result, the ModelInterrupter will return it. However, the
@@ -9,12 +9,11 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.decorator;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Decorator;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.model.task.decorator
+namespace DisciplineOak.Model.Task.decorator
 {
 	public class ModelInterrupter : ModelDecorator
 	{

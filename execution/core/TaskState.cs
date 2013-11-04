@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Default implementation of the {@link ITaskState} interface. It provides
  * methods for modifying the set of variables stored by the TaskState.
  * 
@@ -8,9 +8,8 @@
 
 using System;
 using System.Collections.Generic;
-using OhBehave.Execution.core;
 
-namespace OhBehave.Execution.Core
+namespace DisciplineOak.Execution.Core
 {
 	public class TaskState : ITaskState
 	{

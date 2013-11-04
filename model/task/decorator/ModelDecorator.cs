@@ -1,4 +1,4 @@
-/**
+﻿/**
  * This class represents a decorator of a task. A decorator is a task with only
  * one child, whose behavior it modifies. A decorator is used in situations in
  * which we want to execute a particular task but in a little different way.
@@ -22,11 +22,13 @@
  * 
  */
 
-using OhBehave.Model.Core;
+using DisciplineOak.Model.Core;
 
-public abstract class ModelDecorator : ModelTask
+namespace DisciplineOak.Model.Task.decorator
 {
-	/**
+	public abstract class ModelDecorator : ModelTask
+	{
+		/**
 	 * Constructor.
 	 * <p>
 	 * Constructs a ModelDecorator with one child.
@@ -37,19 +39,20 @@ public abstract class ModelDecorator : ModelTask
 	 *            the child of the ModelDecorator.
 	 */
 
-	protected ModelDecorator(ModelTask guard, ModelTask child)
-		: base(guard, child)
-	{
-	}
+		protected ModelDecorator(ModelTask guard, ModelTask child)
+			: base(guard, child)
+		{
+		}
 
-	/**
+		/**
 	 * Returns the child of this decorator.
 	 * 
 	 * @return the child of this decorator.
 	 */
 
-	public ModelTask getChild()
-	{
-		return Children[0];
+		public ModelTask getChild()
+		{
+			return Children[0];
+		}
 	}
 }

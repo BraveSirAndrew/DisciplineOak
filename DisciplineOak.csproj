@@ -7,8 +7,8 @@
     <ProjectGuid>{5F5C4120-6128-4600-8DFE-5A2C497E9228}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OhBehave</RootNamespace>
-    <AssemblyName>OhBehave</AssemblyName>
+    <RootNamespace>DisciplineOak</RootNamespace>
+    <AssemblyName>DisciplineOak</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

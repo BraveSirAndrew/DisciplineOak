@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A ModelPerformInterruption is a task that interacts with a ModelInterrupter
  * decorator, interrupting it when it (the ModelPerformInterruption) is spawned.
  * A ModelPerformInterruption always succeeds when it is spawned. When the
@@ -9,13 +9,12 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.Leaf;
-using OhBehave.Model.Core;
-using OhBehave.model.task.decorator;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Leaf;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.decorator;
 
-namespace OhBehave.Model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelPerformInterruption : ModelLeaf
 	{

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Common interface for all behaviour tree libraries. A behaviour tree library
  * is just a repository from which behaviour trees can be retrieved by name.
  * <p>
@@ -9,12 +9,13 @@
  * 
  */
 
-using System;
-using OhBehave.Model.Core;
+using DisciplineOak.Model.Core;
 
-public interface IBTLibrary
+namespace DisciplineOak.Execution.Core
 {
-	/**
+	public interface IBTLibrary
+	{
+		/**
 	 * Returns the behaviour tree whose name is <code>name</code>. This method
 	 * returns the root task of the tree.
 	 * 
@@ -23,5 +24,6 @@ public interface IBTLibrary
 	 * @return the behaviour tree whose name is <code>name</code>, or null in
 	 *         case it does not exist.
 	 */
-	ModelTask getBT(string name);
+		ModelTask getBT(string name);
+	}
 }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A ModelRandomSelector is a task that behaves just like a ModelSelector, but
  * which walk through its children in a random order. Instead of evaluating its
  * children from left to right, this task evaluate them in a random order.
@@ -7,12 +7,11 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.composite;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Composite;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.composite
+namespace DisciplineOak.Model.Task.composite
 {
 	public class ModelRandomSelector : ModelComposite
 	{

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A ModelComposite task is a task with several children, whose evaluation
  * depends on the evaluation of its children.
  * 
@@ -7,9 +7,9 @@
  */
 
 using System;
-using OhBehave.Model.Core;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.composite
+namespace DisciplineOak.Model.Task.composite
 {
 	public abstract class ModelComposite : ModelTask
 	{

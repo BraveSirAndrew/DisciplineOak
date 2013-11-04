@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A ModelSubtreeLookup is a leaf node that emulates the behaviour of another
  * behaviour tree.
  * <p>
@@ -12,12 +12,11 @@
  * 
  */
 
-using System;
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Leaf;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelSubtreeLookup : ModelLeaf
 	{

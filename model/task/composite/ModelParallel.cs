@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ModelParallel is a task that runs all its children simultaneously. A
  * ModelParallel is constantly checking the evolution of its children.
  * <p>
@@ -17,12 +17,11 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.execution.task.composite;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Composite;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.composite
+namespace DisciplineOak.Model.Task.composite
 {
 	public class ModelParallel : ModelComposite
 	{

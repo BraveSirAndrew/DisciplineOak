@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Exception thrown when a task that cannot be spawned is spawned.
  * 
  * @author Ricardo Juan Palma Durán
@@ -7,7 +7,7 @@
 
 using System;
 
-namespace OhBehave.exception
+namespace DisciplineOak.exception
 {
 	public class SpawnException : Exception
 	{

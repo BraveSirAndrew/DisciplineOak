@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A HierarchicalContext is a context that stores a parent IContext to fall back
  * to when it cannot find a particular variable in its own set of variables.
  * This class just redefines the method {@link #getVariable(string)} so that if
@@ -10,9 +10,9 @@
  */
 
 using System;
-using OhBehave.Execution.Core;
+using DisciplineOak.Execution.Core;
 
-namespace OhBehave.Execution.context
+namespace DisciplineOak.Execution.Context
 {
 	public class HierarchicalContext : BasicContext
 	{

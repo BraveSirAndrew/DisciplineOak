@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Interface for an entity that is able to receive events from tasks (
  * {@link ExecutionTask}) whose status has changed in a relevant way.
  * 
@@ -6,7 +6,7 @@
  * 
  */
 
-namespace OhBehave.Execution.Core.Events
+namespace DisciplineOak.Execution.Core.@event
 {
 	public interface ITaskListener
 	{

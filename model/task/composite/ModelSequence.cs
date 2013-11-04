@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A ModeSequence is a task with one or more children which are evaluated
  * sequentially.
  * <p>
@@ -12,12 +12,11 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.composite;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Composite;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.composite
+namespace DisciplineOak.Model.Task.composite
 {
 	public class ModelSequence : ModelComposite
 	{

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Simple implementation of the {@link IBTLibrary} interface, which internally
  * uses a Hashtable to map tree names to actual trees. This class also defines
  * methods for adding behaviour trees to the library itself.
@@ -7,12 +7,11 @@
  * 
  */
 
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Execution.context
+namespace DisciplineOak.Execution.Context
 {
 	public class GenericBTLibrary : IBTLibrary
 	{

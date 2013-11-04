@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Base class for all the ExecutionTask subclasses that are able to run
  * composite tasks (that is, classes that inherit from ModelComposite).
  * 
@@ -7,12 +7,11 @@
  */
 
 using System;
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Model.Core;
-using OhBehave.Model.Task.composite;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.composite;
 
-namespace OhBehave.Execution.Task.composite
+namespace DisciplineOak.Execution.Task.Composite
 {
 	public abstract class ExecutionComposite : ExecutionTask
 	{

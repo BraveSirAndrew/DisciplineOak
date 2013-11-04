@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The SafeOutputContext represents a context that can be used to safely
  * controls modifications in another context (the <i>input context</i>).
  * <p>
@@ -36,10 +36,10 @@
 
 using System;
 using System.Collections.Generic;
-using OhBehave.Execution.Core;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Execution.context
+namespace DisciplineOak.Execution.Context
 {
 	public class SafeOutputContext : IContext
 	{

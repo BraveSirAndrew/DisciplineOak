@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ModelTask is a class that models a node (task) of a behaviour tree in a
  * conceptual way. A ModelTask does not have execution capabilities, since it
  * only purpose is to serve as a way of modeling a behaviour tree conceptually.
@@ -39,10 +39,9 @@
  */
 
 using System.Collections.Generic;
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
+using DisciplineOak.Execution.Core;
 
-namespace OhBehave.Model.Core
+namespace DisciplineOak.Model.Core
 {
 	public abstract class ModelTask
 	{

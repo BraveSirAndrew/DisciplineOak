@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A ModelVariableRenamer is a task that renames a variable of the context. This
  * task just takes one variable of the context and changes its name.
  * 
@@ -6,12 +6,11 @@
  * 
  */
 
-using System;
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Leaf;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelVariableRenamer : ModelLeaf
 	{

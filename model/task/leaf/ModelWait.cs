@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A ModelWait task is a task that keeps running for a period of time, and then
  * succeeds. The user can specify for how long the ModelWait task should be
  * running. For that period of time, the task will be evaluated to
@@ -8,12 +8,11 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.Leaf;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Leaf;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelWait : ModelLeaf
 	{

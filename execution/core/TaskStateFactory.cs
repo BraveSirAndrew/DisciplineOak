@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The TaskStateFactory implements the simple factory pattern, and allows
  * clients of the framework to create instances of {@link ITaskState} objects.
  * The methods provided by this factory allows the client to specify the set of
@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using OhBehave.Execution.core;
 
-namespace OhBehave.Execution.Core
+namespace DisciplineOak.Execution.Core
 {
 	public class TaskStateFactory
 	{

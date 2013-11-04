@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Limit is a decorator that limits the number of times a task can be executed.
  * This decorator is used when a task (the child of the decorator) must be run a
  * maximum number of times. When the maximum number of times is exceeded, the
@@ -8,12 +8,11 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.decorator;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Decorator;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.decorator
+namespace DisciplineOak.Model.Task.decorator
 {
 	public class ModelLimit : ModelDecorator
 	{

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ModelRepeat represents a decorator that runs its child task forever. When its
  * child task finishes, it runs it once more. This decorator always return
  * {@link Status#RUNNING}.
@@ -7,12 +7,11 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.decorator;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Decorator;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.decorator
+namespace DisciplineOak.Model.Task.decorator
 {
 	public class ModelRepeat : ModelDecorator
 	{

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A behaviour tree executor (entity that is able to run a behaviour tree) must
  * implement this interface.
  * <p>
@@ -17,9 +17,9 @@
  * 
  */
 
-using OhBehave.Model.Core;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Execution.Core
+namespace DisciplineOak.Execution.Core
 {
 	public interface IBTExecutor
 	{

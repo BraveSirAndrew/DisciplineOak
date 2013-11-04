@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ExecutionDynamicPriorityList is the ExecutionTask that knows how to run a
  * ModelDynamicPriorityList.
  * 
@@ -8,13 +8,12 @@
 
 using System;
 using System.Collections.Generic;
-using OhBehave.Execution.Core;
-using OhBehave.Execution.core;
-using OhBehave.execution.core;
-using OhBehave.Model.Core;
-using OhBehave.model.task.composite;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Core.@event;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.composite;
 
-namespace OhBehave.Execution.Task.composite
+namespace DisciplineOak.Execution.Task.Composite
 {
 	public class ExecutionDynamicPriorityList : ExecutionComposite
 	{

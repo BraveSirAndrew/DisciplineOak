@@ -1,4 +1,4 @@
-/**
+﻿/**
  * BTExecutor is the implementation of the IBTExecutor interface.
  * <p>
  * BTs are conceptually modeled by a hierarchy of interconnected ModelTask objects. A BT is
@@ -31,14 +31,12 @@
 
 using System;
 using System.Collections.Generic;
-using OhBehave.Execution.context;
-using OhBehave.Execution.Core;
-using OhBehave.Execution.core;
-using OhBehave.Execution.Task.decorator;
-using OhBehave.Model.Core;
-using OhBehave.model.task.decorator;
+using DisciplineOak.Execution.Context;
+using DisciplineOak.Execution.Task.Decorator;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.decorator;
 
-namespace OhBehave.execution.core
+namespace DisciplineOak.Execution.Core
 {
 	public class BTExecutor : IBTExecutor
 	{

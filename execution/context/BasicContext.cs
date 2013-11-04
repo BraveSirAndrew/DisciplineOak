@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Basic implementation of the IContext interface. This class uses a Dictionary
  * to store the set of variables.
  * <p>
@@ -11,10 +11,10 @@
 
 using System;
 using System.Collections.Generic;
-using OhBehave.Execution.Core;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Execution.context
+namespace DisciplineOak.Execution.Context
 {
 	public class BasicContext : IContext
 	{

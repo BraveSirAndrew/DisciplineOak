@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The BTExecutorFactory implements the simple factory pattern, and allows
  * clients of the framework to create instances of {@link IBTExecutor} objects
  * that will run specific behaviour trees.
@@ -7,10 +7,9 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.Model.Core;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.execution.core
+namespace DisciplineOak.Execution.Core
 {
 	public class BTExecutorFactory
 	{

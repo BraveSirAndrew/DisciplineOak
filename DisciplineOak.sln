@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OhBehave", "OhBehave.csproj", "{5F5C4120-6128-4600-8DFE-5A2C497E9228}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineOak", "DisciplineOak.csproj", "{5F5C4120-6128-4600-8DFE-5A2C497E9228}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

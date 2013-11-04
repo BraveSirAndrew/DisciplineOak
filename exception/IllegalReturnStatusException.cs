@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Exception thrown when {@link ExecutionTask#internalTick()} returns a Status
  * that is not allowed.
  * 
@@ -7,9 +7,8 @@
  */
 
 using System;
-using OhBehave.Exceptions;
 
-namespace OhBehave.exception
+namespace DisciplineOak.exception
 {
 	public class IllegalReturnStatusException : TickException
 	{

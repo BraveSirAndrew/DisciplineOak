@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OhBehave.Model.Core
+namespace DisciplineOak.Model.Core
 {
 	/**
 	 * The position of a ModelTask in a behaviour tree. It contains the sequence

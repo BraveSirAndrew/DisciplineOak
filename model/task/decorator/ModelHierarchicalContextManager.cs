@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A ModelHierarchicalContextManager is a decorator that creates a new context for its child
  * task. The context that it creates is a {@link HierarchicalContext}. The
  * parent context of the HierarchicalContext is the context of the
@@ -11,12 +11,11 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.decorator;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Decorator;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.decorator
+namespace DisciplineOak.Model.Task.decorator
 {
 	public class ModelHierarchicalContextManager : ModelDecorator
 	{

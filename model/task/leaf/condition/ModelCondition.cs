@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Class representing an abstract condition to be tested within the game.
  * Conditions are tasks with no children (that is, they are leaves in the
  * behavior tree) and with no connection to any other task in the tree.
@@ -7,9 +7,9 @@
  * 
  */
 
-using OhBehave.Model.Core;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.Leaf.condition
+namespace DisciplineOak.Model.Task.Leaf.condition
 {
 	public abstract class ModelCondition : ModelLeaf
 	{

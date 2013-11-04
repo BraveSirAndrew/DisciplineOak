@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ExecutionCondition is the base class of all of the class that are able to run
  * conditions in the game (that is, subclasses of ModelCondition).
  * 
@@ -7,12 +7,11 @@
  */
 
 using System;
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Model.Core;
-using OhBehave.Model.Task.Leaf.condition;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Leaf.condition;
 
-namespace OhBehave.Execution.Task.Leaf.condition
+namespace DisciplineOak.Execution.Task.Leaf.Condition
 {
 	public abstract class ExecutionCondition : ExecutionLeaf
 	{

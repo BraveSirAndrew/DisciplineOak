@@ -1,4 +1,4 @@
-﻿namespace OhBehave.Model.Task.composite
+﻿namespace DisciplineOak.Model.Task.composite
 {
 	public enum ParallelPolicy
 	{

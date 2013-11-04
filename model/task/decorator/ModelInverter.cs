@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ModelInverter is a decorator used to invert the status code returned by its
  * child.
  * <p>
@@ -18,12 +18,11 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.decorator;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Decorator;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.decorator
+namespace DisciplineOak.Model.Task.decorator
 {
 	public class ModelInverter : ModelDecorator
 	{

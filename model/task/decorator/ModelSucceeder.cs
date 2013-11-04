@@ -1,16 +1,15 @@
-/**
+﻿/**
  * A ModelSucceeder is a decorator that makes its child succeeds no matter it it actually fails.
  * 
  * @author Ricardo Juan Palma Durán
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.decorator;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Decorator;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.decorator
+namespace DisciplineOak.Model.Task.decorator
 {
 	public class ModelSucceeder : ModelDecorator
 	{

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ExecutionInterrupter is the ExecutionTask that knows how to run a
  * ModelInterrupter. In order to interrupt the ExecutionInterrupter,
  * {@link #interrupt(Status)} must be called.
@@ -8,13 +8,12 @@
  */
 
 using System;
-using OhBehave.Execution.Core;
-using OhBehave.Execution.core;
-using OhBehave.execution.core;
-using OhBehave.Model.Core;
-using OhBehave.model.task.decorator;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Core.@event;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.decorator;
 
-namespace OhBehave.Execution.Task.decorator
+namespace DisciplineOak.Execution.Task.Decorator
 {
 	public class ExecutionInterrupter : ExecutionDecorator
 	{

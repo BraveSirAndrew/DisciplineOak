@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A behaviour tree is conceptually modeled by the ModelTask class. A ModelTask,
  * however, does not know how to run, since it is just a conceptual abstraction.
  * <p>
@@ -42,13 +42,11 @@
 
 using System;
 using System.Collections.Generic;
-using OhBehave.exception;
-using OhBehave.Execution.core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Core.Events;
-using OhBehave.Model.Core;
+using DisciplineOak.exception;
+using DisciplineOak.Execution.Core.@event;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Execution.Core
+namespace DisciplineOak.Execution.Core
 {
 	public abstract class ExecutionTask : ITaskListener
 	{

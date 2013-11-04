@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Exception thrown when a task that cannot be ticked is ticked.
  * 
  * @author Ricardo Juan Palma Durán
@@ -6,9 +6,8 @@
  */
 
 using System;
-using OhBehave.Exceptions;
 
-namespace OhBehave.exception
+namespace DisciplineOak.exception
 {
 	public class NotTickableException : TickException
 	{

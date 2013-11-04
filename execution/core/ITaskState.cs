@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The ITaskState interface represents the persistent state of a task in a
  * behaviour tree. This state is represented as a set of variables with name and
  * value.
@@ -21,7 +21,7 @@
 
 using System;
 
-namespace OhBehave.Execution.core
+namespace DisciplineOak.Execution.Core
 {
 	public interface ITaskState
 	{

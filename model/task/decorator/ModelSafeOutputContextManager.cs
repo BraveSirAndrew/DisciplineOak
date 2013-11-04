@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A ModelSafeOutputContextManager is a decorator that creates a new context for
  * its child task. The context that it creates is a {@link SafeOutputContext},
  * and the input context that the SafeOutputContext receives is that of the
@@ -10,14 +10,12 @@
  * 
  */
 
-using System;
 using System.Collections.Generic;
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.decorator;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Decorator;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.decorator
+namespace DisciplineOak.Model.Task.decorator
 {
 	public class ModelSafeOutputContextManager : ModelDecorator
 	{

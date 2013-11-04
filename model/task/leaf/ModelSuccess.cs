@@ -1,16 +1,15 @@
-/**
+﻿/**
  * A ModelSuccess represents a task that always succeeds.
  * 
  * @author Ricardo Juan Palma Durán
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.Leaf;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Leaf;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelSuccess : ModelLeaf
 	{

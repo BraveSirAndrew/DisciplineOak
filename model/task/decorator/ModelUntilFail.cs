@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The ModelUntilFail class represents a decorator used to run a task as long as
  * it does not fail.
  * <p>
@@ -10,12 +10,11 @@
  * 
  */
 
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Execution.Task.decorator;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Execution.Task.Decorator;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Model.Task.decorator
+namespace DisciplineOak.Model.Task.decorator
 {
 	public class ModelUntilFail : ModelDecorator
 	{

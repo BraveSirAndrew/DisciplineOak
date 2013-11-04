@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The BTLibraryFactory implements the simple factory pattern, and allows
  * clients of the framework to create instances of {@link IBTLibrary} composed
  * of behaviour trees.
@@ -7,12 +7,11 @@
  * 
  */
 
-using System;
 using System.Collections.Generic;
-using OhBehave.Execution.context;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Context;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Execution.Core
+namespace DisciplineOak.Execution.Core
 {
 	public class BTLibraryFactory
 	{

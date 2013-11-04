@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Base class for all the ExecutionTask subclasses that are able to run
  * decorator tasks (that is, classes that inherit from ModelDecorator).
  * 
@@ -7,11 +7,11 @@
  */
 
 using System;
-using OhBehave.Execution.Core;
-using OhBehave.execution.core;
-using OhBehave.Model.Core;
+using DisciplineOak.Execution.Core;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.decorator;
 
-namespace OhBehave.Execution.Task.decorator
+namespace DisciplineOak.Execution.Task.Decorator
 {
 	public abstract class ExecutionDecorator : ExecutionTask
 	{

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Interface defining the context of a behavior tree task. The context of a task
  * is a set of variables, each one consisting of a name and a value. This
  * interface defines some methods for manipulating such variables.
@@ -15,9 +15,9 @@
  */
 
 using System;
-using OhBehave.Model.Core;
+using DisciplineOak.Model.Core;
 
-namespace OhBehave.Execution.Core
+namespace DisciplineOak.Execution.Core
 {
 	public interface IContext
 	{
