@@ -1,0 +1,41 @@
+/**
+ * A ModelFailure represents a task that always fails.
+ * 
+ * @author Ricardo Juan Palma Durán
+ * 
+ */
+
+using OhBehave.Execution.Core;
+using OhBehave.execution.core;
+using OhBehave.Execution.Task.Leaf;
+using OhBehave.Model.Core;
+
+namespace OhBehave.Model.Task.Leaf
+{
+	public class ModelFailure : ModelLeaf
+	{
+		/**
+	 * Constructor.
+	 * 
+	 * @param guard
+	 *            the guard of the ModelFailure, which may be null.
+	 */
+
+		public ModelFailure(ModelTask guard) : base(guard)
+		{
+		}
+
+		/**
+	 * Returns an {@link ExecutionFailure} that knows how to run this
+	 * ModelFailure.
+	 * 
+	 * @see jbt.model.core.ModelTask#createExecutor(jbt.execution.core.BTExecutor,
+	 *      jbt.execution.core.ExecutionTask)
+	 */
+
+		public override ExecutionTask CreateExecutor(BTExecutor executor, ExecutionTask parent)
+		{
+			return new ExecutionFailure(this, executor, parent);
+		}
+	}
+}

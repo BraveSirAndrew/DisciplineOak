@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F5C4120-6128-4600-8DFE-5A2C497E9228}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OhBehave</RootNamespace>
+    <AssemblyName>OhBehave</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="exception\IllegalReturnStatusException.cs" />
+    <Compile Include="exception\NotTickableException.cs" />
+    <Compile Include="exception\SpawnException.cs" />
+    <Compile Include="exception\TickException.cs" />
+    <Compile Include="execution\context\BasicContext.cs" />
+    <Compile Include="execution\context\GenericBTLibrary.cs" />
+    <Compile Include="execution\context\HierarchicalContext.cs" />
+    <Compile Include="execution\context\SafeContext.cs" />
+    <Compile Include="execution\context\SafeOutputContext.cs" />
+    <Compile Include="execution\core\BTExecutor.cs" />
+    <Compile Include="execution\core\BTExecutorFactory.cs" />
+    <Compile Include="execution\core\BTLibraryFactory.cs" />
+    <Compile Include="execution\core\ContextFactory.cs" />
+    <Compile Include="execution\core\event\ITaskListener.cs" />
+    <Compile Include="execution\core\event\TaskEvent.cs" />
+    <Compile Include="execution\core\ExecutionTask.cs" />
+    <Compile Include="execution\core\IBTExecutor.cs" />
+    <Compile Include="execution\core\IBTLibrary.cs" />
+    <Compile Include="execution\core\IContext.cs" />
+    <Compile Include="execution\core\ITaskState.cs" />
+    <Compile Include="execution\core\Status.cs" />
+    <Compile Include="execution\core\TaskState.cs" />
+    <Compile Include="execution\core\TaskStateFactory.cs" />
+    <Compile Include="execution\task\composite\ExecutionComposite.cs" />
+    <Compile Include="execution\task\composite\ExecutionDynamicPriorityList.cs" />
+    <Compile Include="execution\task\composite\ExecutionParallel.cs" />
+    <Compile Include="execution\task\composite\ExecutionRandomSelector.cs" />
+    <Compile Include="execution\task\composite\ExecutionRandomSequence.cs" />
+    <Compile Include="execution\task\composite\ExecutionSelector.cs" />
+    <Compile Include="execution\task\composite\ExecutionSequence.cs" />
+    <Compile Include="execution\task\composite\ExecutionStaticPriorityList.cs" />
+    <Compile Include="execution\task\decorator\ExecutionDecorator.cs" />
+    <Compile Include="execution\task\decorator\ExecutionHierarchicalContextManager.cs" />
+    <Compile Include="execution\task\decorator\ExecutionInterrupter.cs" />
+    <Compile Include="execution\task\decorator\ExecutionInverter.cs" />
+    <Compile Include="execution\task\decorator\ExecutionLimit.cs" />
+    <Compile Include="execution\task\decorator\ExecutionRepeat.cs" />
+    <Compile Include="execution\task\decorator\ExecutionSafeContextManager.cs" />
+    <Compile Include="execution\task\decorator\ExecutionSafeOutputContextManager.cs" />
+    <Compile Include="execution\task\decorator\ExecutionSucceeder.cs" />
+    <Compile Include="execution\task\decorator\ExecutionUntilFail.cs" />
+    <Compile Include="execution\task\leaf\action\ExecutionAction.cs" />
+    <Compile Include="execution\task\leaf\condition\ExecutionCondition.cs" />
+    <Compile Include="execution\task\leaf\ExecutionFailure.cs" />
+    <Compile Include="execution\task\leaf\ExecutionLeaf.cs" />
+    <Compile Include="execution\task\leaf\ExecutionPerformInterruption.cs" />
+    <Compile Include="execution\task\leaf\ExecutionSubtreeLookup.cs" />
+    <Compile Include="execution\task\leaf\ExecutionSuccess.cs" />
+    <Compile Include="execution\task\leaf\ExecutionVariableRenamer.cs" />
+    <Compile Include="execution\task\leaf\ExecutionWait.cs" />
+    <Compile Include="model\core\ModelTask.cs" />
+    <Compile Include="model\core\Position.cs" />
+    <Compile Include="model\task\composite\ModelComposite.cs" />
+    <Compile Include="model\task\composite\ModelDynamicPriorityList.cs" />
+    <Compile Include="model\task\composite\ModelParallel.cs" />
+    <Compile Include="model\task\composite\ModelRandomSelector.cs" />
+    <Compile Include="model\task\composite\ModelRandomSequence.cs" />
+    <Compile Include="model\task\composite\ModelSelector.cs" />
+    <Compile Include="model\task\composite\ModelSequence.cs" />
+    <Compile Include="model\task\composite\ModelStaticPriorityList.cs" />
+    <Compile Include="model\task\composite\ParallelPolicy.cs" />
+    <Compile Include="model\task\decorator\ModelDecorator.cs" />
+    <Compile Include="model\task\decorator\ModelHierarchicalContextManager.cs" />
+    <Compile Include="model\task\decorator\ModelInterrupter.cs" />
+    <Compile Include="model\task\decorator\ModelInverter.cs" />
+    <Compile Include="model\task\decorator\ModelLimit.cs" />
+    <Compile Include="model\task\decorator\ModelRepeat.cs" />
+    <Compile Include="model\task\decorator\ModelSafeContextManager.cs" />
+    <Compile Include="model\task\decorator\ModelSafeOutputContextManager.cs" />
+    <Compile Include="model\task\decorator\ModelSucceeder.cs" />
+    <Compile Include="model\task\decorator\ModelUntilFail.cs" />
+    <Compile Include="model\task\leaf\action\ModelAction.cs" />
+    <Compile Include="model\task\leaf\condition\ModelCondition.cs" />
+    <Compile Include="model\task\leaf\ModelFailure.cs" />
+    <Compile Include="model\task\leaf\ModelLeaf.cs" />
+    <Compile Include="model\task\leaf\ModelPerformInterruption.cs" />
+    <Compile Include="model\task\leaf\ModelSubtreeLookup.cs" />
+    <Compile Include="model\task\leaf\ModelSuccess.cs" />
+    <Compile Include="model\task\leaf\ModelVariableRenamer.cs" />
+    <Compile Include="model\task\leaf\ModelWait.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

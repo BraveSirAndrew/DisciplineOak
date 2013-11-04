@@ -1,0 +1,73 @@
+/**
+ * A ModelSafeOutputContextManager is a decorator that creates a new context for
+ * its child task. The context that it creates is a {@link SafeOutputContext},
+ * and the input context that the SafeOutputContext receives is that of the
+ * ModelSafeOutputContextManager.
+ * <p>
+ * The spawning and updating of the child task are carried out as usual.
+ * 
+ * @author Ricardo Juan Palma Durán
+ * 
+ */
+
+using System;
+using System.Collections.Generic;
+using OhBehave.Execution.Core;
+using OhBehave.execution.core;
+using OhBehave.Execution.Task.decorator;
+using OhBehave.Model.Core;
+
+namespace OhBehave.Model.Task.decorator
+{
+	public class ModelSafeOutputContextManager : ModelDecorator
+	{
+		/**
+	 * The list of output variables of the SafeOutputContext.
+	 */
+		private readonly List<string> outputVariables;
+
+		/**
+	 * Constructor.
+	 * 
+	 * @param guard
+	 *            the guard of the ModelSafeOutputContextManager, which may be
+	 *            null.
+	 * @param child
+	 *            the child of the ModelSafeOutputContextManager.
+	 * @param outputVariables
+	 *            the list of output variables of the SafeOutputContext that is
+	 *            created.
+	 */
+
+		public ModelSafeOutputContextManager(ModelTask guard, List<string> outputVariables, ModelTask child)
+			: base(guard, child)
+		{
+			this.outputVariables = outputVariables;
+		}
+
+		/**
+	 * Returns an ExecutionSafeOutputContextManager that knows how to run this
+	 * ModelSafeOutputContextManager.
+	 * 
+	 * @see jbt.model.core.ModelTask#createExecutor(jbt.execution.core.BTExecutor,
+	 *      ExecutionTask)
+	 */
+
+		public override ExecutionTask CreateExecutor(BTExecutor executor, ExecutionTask parent)
+		{
+			return new ExecutionSafeOutputContextManager(this, executor, parent);
+		}
+
+		/**
+	 * Returns a list with the set of output variables of the SafeOutputContext.
+	 * The list cannot be modified.
+	 * 
+	 * @return a list with the set of output variables of the SafeOutputContext.
+	 */
+
+		public List<string> getOutputVariables()
+		{
+			return outputVariables;
+		}
+	}
+}
