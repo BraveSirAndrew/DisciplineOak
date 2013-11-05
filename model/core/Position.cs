@@ -75,7 +75,7 @@ namespace DisciplineOak.Model.Core
 
 		public List<int> Moves
 		{
-			get { return new List<int>(_moves); }
+			get { return new List<int>(_moves ?? new List<int>()); }
 		}
 
 		/**
@@ -190,6 +190,9 @@ namespace DisciplineOak.Model.Core
 
 		public override int GetHashCode()
 		{
+			if (_moves == null)
+				return 0;
+
 			return _moves.GetHashCode();
 		}
 	}

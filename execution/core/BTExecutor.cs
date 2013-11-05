@@ -247,7 +247,7 @@ namespace DisciplineOak.Execution.Core
 
 		public ExecutionInterrupter GetExecutionInterrupter(ModelInterrupter modelInterrupter)
 		{
-			return _interrupters[modelInterrupter];
+			return _interrupters.ContainsKey(modelInterrupter) ? _interrupters[modelInterrupter] : null;
 		}
 
 		/**
@@ -481,7 +481,7 @@ namespace DisciplineOak.Execution.Core
 
 		public ITaskState GetTaskState(Position taskPosition)
 		{
-			return _tasksStates[taskPosition];
+			return _tasksStates.ContainsKey(taskPosition) ? _tasksStates[taskPosition] : null;
 		}
 
 		/**

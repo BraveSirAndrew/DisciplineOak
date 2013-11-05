@@ -80,7 +80,7 @@ namespace DisciplineOak.Execution.Task.Leaf
 		{
 			long estimatedTime = DateTime.Now.Ticks - startTime;
 
-			if ((estimatedTime / 1000000.0) >= duration)
+			if ((TimeSpan.FromTicks(estimatedTime)).TotalMilliseconds >= duration)
 			{
 				return Status.Success;
 			}

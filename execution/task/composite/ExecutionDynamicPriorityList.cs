@@ -316,8 +316,7 @@ namespace DisciplineOak.Execution.Task.Composite
 				{
 					guardExecutor.Terminate();
 					_guardsResults[i] = Status.Running;
-					var newExecutor = new BTExecutor(guardExecutor.GetBehaviourTree(),
-						Context);
+					var newExecutor = new BTExecutor(guardExecutor.GetBehaviourTree(), Context);
 					newExecutor.CopyTasksStates(guardExecutor);
 					newExecutor.Tick();
 					_guardsExecutors[i] = newExecutor;
