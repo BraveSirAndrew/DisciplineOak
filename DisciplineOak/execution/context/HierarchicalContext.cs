@@ -43,21 +43,18 @@ namespace DisciplineOak.Execution.Context
 		 * is returned.
 		 */
 
-		public new Object this[string name]
+		public new object this[string name]
 		{
 			get
 			{
+				var result = base[name];
 
-				Object result;
+				if (result != null) 
+					return result;
 
-				result = base[name];
-
-				if (result == null)
+				if (_parent != null)
 				{
-					if (_parent != null)
-					{
-						result = _parent[name];
-					}
+					result = _parent[name];
 				}
 
 				return result;

@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineOak", "DisciplineOak.csproj", "{5F5C4120-6128-4600-8DFE-5A2C497E9228}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineOak", "DisciplineOak\DisciplineOak.csproj", "{5F5C4120-6128-4600-8DFE-5A2C497E9228}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineOak.Tests", "DisciplineOak.Tests\DisciplineOak.Tests.csproj", "{A844C68A-D386-4281-A77A-DEDFF388BC2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{5F5C4120-6128-4600-8DFE-5A2C497E9228}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F5C4120-6128-4600-8DFE-5A2C497E9228}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F5C4120-6128-4600-8DFE-5A2C497E9228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A844C68A-D386-4281-A77A-DEDFF388BC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A844C68A-D386-4281-A77A-DEDFF388BC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A844C68A-D386-4281-A77A-DEDFF388BC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A844C68A-D386-4281-A77A-DEDFF388BC2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

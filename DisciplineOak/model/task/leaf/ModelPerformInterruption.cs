@@ -19,7 +19,6 @@ namespace DisciplineOak.Model.Task.Leaf
 	public class ModelPerformInterruption : ModelLeaf
 	{
 		private readonly Status _desiredResult;
-		private ModelInterrupter _interrupter;
 
 		/**
 		 * Constructor.
@@ -37,16 +36,12 @@ namespace DisciplineOak.Model.Task.Leaf
 		public ModelPerformInterruption(ModelTask guard, ModelInterrupter interrupter, Status desiredResult)
 			: base(guard)
 		{
-			this._interrupter = interrupter;
-			this._desiredResult = desiredResult;
+			Interrupter = interrupter;
+			_desiredResult = desiredResult;
 		}
 
-		public ModelInterrupter Interrupter
-		{
-			get { return _interrupter; }
-			set { this._interrupter = value; }
-		}
-		
+		public ModelInterrupter Interrupter { get; set; }
+
 		/**
 		 * Returns the result that the ModelInterrupter should return in case it is
 		 * interrupted.

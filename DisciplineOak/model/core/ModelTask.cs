@@ -1,48 +1,43 @@
-﻿/**
- * ModelTask is a class that models a node (task) of a behaviour tree in a
- * conceptual way. A ModelTask does not have execution capabilities, since it
- * only purpose is to serve as a way of modeling a behaviour tree conceptually.
- * <p>
- * ModelTask is an abstract class, and it just acts as a container of other
- * child tasks, with maybe a guard.
- * <p>
- * As stated above, a ModelTask cannot be run. The idea behind this model is
- * that an external interpreter should be in charge of running the behaviour
- * tree (ModelTask) instead of the task itself. By doing so, there is a clear
- * separation between both the conceptual and execution model, thus allowing to
- * have a unique model shared by many interpreters (which, in other words, means
- * that a single behaviour tree can be run by many entities at the same time).
- * <p>
- * The interpreter that is used to run a behaviour tree -that is, a ModelTask
- * and all the tasks below it- is the BTExecutor class. The BTExecutor class is
- * used to run a ModelTask. A BTExecutor runs a behaviour tree by ticks. This
- * means that the tree is given some time to think and evolve only at certain
- * moments (ticks), and is doing nothing otherwise.
- * <p>
- * Every ModelTask is able to issue an ExecutionTask capable of running it (
- * {@link #createExecutor(BTExecutor, ExecutionTask)}). Actually, the BTExecutor
- * uses ExecutionTask objects in order to run the conceptual behaviour tree. An
- * ExecutionTask is just another type of task that knows how to run its
- * corresponding ModelTask (by interacting with other tasks as well as with the
- * BTExecutor). For instance, a ModelSequence, which represents a sequence task
- * in a behaviour tree, has got an ExecutionTask that knows how to run it, the
- * ExecutionSequence. The <code>createExecutor()</code> method of ModelSequence
- * just returns an instance of ExecutionSequence. Therefore, the
- * <code>createExecutor()</code> method should just return an ExecutionTask that
- * knows how to run the ModelTask.
- * 
- * @see ExecutionTask
- * @see BTExecutor
- * 
- * @author Ricardo Juan Palma Durán
- * 
- */
-
+﻿
 using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
 
 namespace DisciplineOak.Model.Core
 {
+	
+	///ModelTask is a class that models a node (task) of a behaviour tree in a
+	///conceptual way. A ModelTask does not have execution capabilities, since it
+	///only purpose is to serve as a way of modeling a behaviour tree conceptually.
+	///ModelTask is an abstract class, and it just acts as a container of other
+	///child tasks, with maybe a guard.
+	///
+	///As stated above, a ModelTask cannot be run. The idea behind this model is
+	///that an external interpreter should be in charge of running the behaviour
+	///tree (ModelTask) instead of the task itself. By doing so, there is a clear
+	///separation between both the conceptual and execution model, thus allowing to
+	///have a unique model shared by many interpreters (which, in other words, means
+	///that a single behaviour tree can be run by many entities at the same time).
+	///
+	///The interpreter that is used to run a behaviour tree -that is, a ModelTask
+	///and all the tasks below it- is the BTExecutor class. The BTExecutor class is
+	///used to run a ModelTask. A BTExecutor runs a behaviour tree by ticks. This
+	///means that the tree is given some time to think and evolve only at certain
+	///moments (ticks), and is doing nothing otherwise.
+	///
+	///Every ModelTask is able to issue an ExecutionTask capable of running it (
+	///{@link #createExecutor(BTExecutor, ExecutionTask)}). Actually, the BTExecutor
+	///uses ExecutionTask objects in order to run the conceptual behaviour tree. An
+	///ExecutionTask is just another type of task that knows how to run its
+	///corresponding ModelTask (by interacting with other tasks as well as with the
+	///BTExecutor). For instance, a ModelSequence, which represents a sequence task
+	///in a behaviour tree, has got an ExecutionTask that knows how to run it, the
+	///ExecutionSequence. The <code>createExecutor()</code> method of ModelSequence
+	///just returns an instance of ExecutionSequence. Therefore, the
+	///<code>createExecutor()</code> method should just return an ExecutionTask that
+	///knows how to run the ModelTask.
+	///
+	///@see ExecutionTask
+	///@see BTExecutor
 	public abstract class ModelTask
 	{
 		/** List of the children of the ModelTask. */
@@ -129,7 +124,7 @@ namespace DisciplineOak.Model.Core
 		 * @return an ExecutionTask that is able to run this ModelTask.
 		 */
 		public abstract ExecutionTask CreateExecutor(BTExecutor executor, ExecutionTask parent);
-		
+
 		/**
 		 * This method computes the positions of all the tasks of the behaviour tree
 		 * whose root is this node. After calling this method, the positions of all
@@ -219,6 +214,4 @@ namespace DisciplineOak.Model.Core
 			}
 		}
 	}
-
-	
 }

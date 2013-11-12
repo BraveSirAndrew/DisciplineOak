@@ -14,9 +14,9 @@ namespace DisciplineOak.Execution.Core.@event
 	{
 		/** The new status of the task. */
 		private readonly ExecutionTask _source;
-		private readonly Status newStatus;
+		private readonly Status _newStatus;
 		/** The previous status of the task. */
-		private readonly Status previousStatus;
+		private readonly Status _previousStatus;
 
 		/**
 	 * Creates a TaskEvent with a particular ExcutionTask as source of the
@@ -32,8 +32,8 @@ namespace DisciplineOak.Execution.Core.@event
 		public TaskEvent(ExecutionTask source, Status newStatus, Status previousStatus)
 		{
 			_source = source;
-			this.newStatus = newStatus;
-			this.previousStatus = previousStatus;
+			_newStatus = newStatus;
+			_previousStatus = previousStatus;
 		}
 
 		/**
@@ -44,7 +44,7 @@ namespace DisciplineOak.Execution.Core.@event
 
 		public Status getNewStatus()
 		{
-			return newStatus;
+			return _newStatus;
 		}
 
 		/**
@@ -55,7 +55,7 @@ namespace DisciplineOak.Execution.Core.@event
 
 		public Status getPreviousStatus()
 		{
-			return previousStatus;
+			return _previousStatus;
 		}
 	}
 }

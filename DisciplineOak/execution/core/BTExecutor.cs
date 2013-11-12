@@ -46,7 +46,8 @@ namespace DisciplineOak.Execution.Core
 		public enum BTExecutorList
 		{
 			/** Enum for the list of open nodes. */
-			Open, /** Enum for the list of tickable nodes. */
+			Open, 
+			/** Enum for the list of tickable nodes. */
 			Tickable
 		};
 

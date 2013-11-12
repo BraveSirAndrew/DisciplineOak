@@ -24,8 +24,7 @@ namespace DisciplineOak.Model.Task.composite
 	 * @param children
 	 *            the list of children. Must have at least one element.
 	 */
-
-		public ModelComposite(ModelTask guard, params ModelTask[] children) : base(guard, children)
+		protected ModelComposite(ModelTask guard, params ModelTask[] children) : base(guard, children)
 		{
 			if (children.Length == 0)
 			{

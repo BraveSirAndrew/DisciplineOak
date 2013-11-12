@@ -1,5 +1,5 @@
 ﻿/**
- * A ModelSucceeder is a decorator that makes its child succeeds no matter it it actually fails.
+ * A ModelSucceeder is a decorator that makes its child succeeds no matter if it actually fails.
  * 
  * @author Ricardo Juan Palma Durán
  * 
