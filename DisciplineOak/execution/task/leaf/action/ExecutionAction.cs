@@ -11,7 +11,7 @@ using DisciplineOak.Execution.Core;
 using DisciplineOak.Model.Core;
 using DisciplineOak.Model.Task.Leaf.Action;
 
-namespace DisciplineOak.Execution.Task.leaf.action
+namespace DisciplineOak.Execution.Task.Leaf.Action
 {
 	public abstract class ExecutionAction : ExecutionLeaf
 	{
