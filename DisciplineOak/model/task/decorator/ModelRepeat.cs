@@ -3,7 +3,7 @@
  * child task finishes, it runs it once more. This decorator always return
  * {@link Status#RUNNING}.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -11,7 +11,7 @@ using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Decorator;
 using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.Model.Task.decorator
+namespace DisciplineOak.Model.Task.Decorator
 {
 	public class ModelRepeat : ModelDecorator
 	{

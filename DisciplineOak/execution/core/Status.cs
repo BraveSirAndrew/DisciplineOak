@@ -16,7 +16,7 @@
 	 * is, it has not started executing.
 	 * </ul>
 	 * 
-	 * @author Ricardo Juan Palma Durán
+	 
 	 * 
 	 */
 	public enum Status

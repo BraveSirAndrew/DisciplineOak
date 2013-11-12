@@ -4,7 +4,7 @@
  * The methods provided by this factory allows the client to specify the set of
  * variables that the task state will contain.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 

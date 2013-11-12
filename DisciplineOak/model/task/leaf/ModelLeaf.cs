@@ -1,13 +1,13 @@
 ﻿/**
  * Base class for all the tasks that have no children.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
-using DisciplineOak.model.Core;
+using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public abstract class ModelLeaf : ModelTask
 	{

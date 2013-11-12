@@ -6,15 +6,15 @@
  * fail. When the child task fails, ModelUntilFail returns
  * {@link Status#SUCCESS}. Otherwise it returns {@link Status#RUNNING}.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Task.decorator;
-using DisciplineOak.model.Core;
+using DisciplineOak.Execution.Task.Decorator;
+using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.model.Task.Decorator
+namespace DisciplineOak.Model.Task.Decorator
 {
 	public class ModelUntilFail : ModelDecorator
 	{

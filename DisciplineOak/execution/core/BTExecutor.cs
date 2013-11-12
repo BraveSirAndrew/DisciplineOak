@@ -25,7 +25,7 @@
  * @see ModelTask
  * @see ExecutionTask
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -34,7 +34,7 @@ using System.Collections.Generic;
 using DisciplineOak.Execution.Context;
 using DisciplineOak.Execution.Task.Decorator;
 using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.decorator;
+using DisciplineOak.Model.Task.Decorator;
 
 namespace DisciplineOak.Execution.Core
 {

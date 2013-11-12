@@ -3,7 +3,7 @@
  * clients of the framework to create instances of {@link IBTLibrary} composed
  * of behaviour trees.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 

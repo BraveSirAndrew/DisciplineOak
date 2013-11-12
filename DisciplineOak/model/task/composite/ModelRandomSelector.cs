@@ -3,7 +3,7 @@
  * which walk through its children in a random order. Instead of evaluating its
  * children from left to right, this task evaluate them in a random order.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -11,7 +11,7 @@ using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Composite;
 using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.Model.Task.composite
+namespace DisciplineOak.Model.Task.Composite
 {
 	public class ModelRandomSelector : ModelComposite
 	{

@@ -10,12 +10,12 @@
  * to other behaviour trees, it will be the context that will provide them with them.
  * Thus, the context defines a method for retrieving behaviour trees by name.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
-using DisciplineOak.model.Core;
+using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Execution.Core
 {

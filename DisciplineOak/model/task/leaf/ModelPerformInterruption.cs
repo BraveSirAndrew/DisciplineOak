@@ -5,16 +5,16 @@
  * ModelInterrupter gets interrupted, the status code it returns is also set by
  * the ModelPerformInterruption.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Task.leaf;
-using DisciplineOak.model.Core;
-using DisciplineOak.model.Task.Decorator;
+using DisciplineOak.Execution.Task.Leaf;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Decorator;
 
-namespace DisciplineOak.model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelPerformInterruption : ModelLeaf
 	{

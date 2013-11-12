@@ -3,13 +3,13 @@
  * action is a task with no children (that is, it is a leaf in the behavior
  * tree) and with no connection to any other task in the tree.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
-using DisciplineOak.model.Core;
+using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.model.Task.Leaf.action
+namespace DisciplineOak.Model.Task.Leaf.Action
 {
 	public abstract class ModelAction : ModelLeaf
 	{

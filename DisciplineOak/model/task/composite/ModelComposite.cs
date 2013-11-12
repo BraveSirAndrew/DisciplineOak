@@ -2,14 +2,14 @@
  * A ModelComposite task is a task with several children, whose evaluation
  * depends on the evaluation of its children.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.Model.Task.composite
+namespace DisciplineOak.Model.Task.Composite
 {
 	public abstract class ModelComposite : ModelTask
 	{

@@ -7,7 +7,7 @@
  * <p>
  * The spawning and updating of the child task are carried out as usual.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -15,7 +15,7 @@ using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Decorator;
 using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.Model.Task.decorator
+namespace DisciplineOak.Model.Task.Decorator
 {
 	public class ModelHierarchicalContextManager : ModelDecorator
 	{

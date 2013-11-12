@@ -5,14 +5,14 @@
  * Also, since a context must contain a set of behaviour trees, this class
  * defines some methods to add behaviour trees to the context.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.model.Core;
+using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Execution.Context
 {

@@ -3,13 +3,13 @@
  * Conditions are tasks with no children (that is, they are leaves in the
  * behavior tree) and with no connection to any other task in the tree.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
-using DisciplineOak.model.Core;
+using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.model.Task.Leaf.condition
+namespace DisciplineOak.Model.Task.Leaf.Condition
 {
 	public abstract class ModelCondition : ModelLeaf
 	{

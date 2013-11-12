@@ -1,17 +1,17 @@
 ﻿/**
  * ExecutionRepeat is the ExecutionTask that knows how to run a ModelForever.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Core.@event;
-using DisciplineOak.model.Core;
-using DisciplineOak.model.Task.Decorator;
+using DisciplineOak.Execution.Core.Events;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Decorator;
 
-namespace DisciplineOak.Execution.Task.decorator
+namespace DisciplineOak.Execution.Task.Decorator
 {
 	public class ExecutionRepeat : ExecutionDecorator
 	{

@@ -4,7 +4,7 @@
  * maximum number of times. When the maximum number of times is exceeded, the
  * decorator will fail forever on.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -12,7 +12,7 @@ using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Decorator;
 using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.Model.Task.decorator
+namespace DisciplineOak.Model.Task.Decorator
 {
 	public class ModelLimit : ModelDecorator
 	{

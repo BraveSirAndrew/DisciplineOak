@@ -14,7 +14,7 @@
  * <code>Status.RUNNING</code> (that is, <code>Status.RUNNING</code> is not
  * inverted).
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -22,7 +22,7 @@ using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Decorator;
 using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.Model.Task.decorator
+namespace DisciplineOak.Model.Task.Decorator
 {
 	public class ModelInverter : ModelDecorator
 	{

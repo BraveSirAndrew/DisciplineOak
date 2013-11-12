@@ -2,16 +2,16 @@
  * ExecutionCondition is the base class of all of the class that are able to run
  * conditions in the game (that is, subclasses of ModelCondition).
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.model.Core;
-using DisciplineOak.model.Task.Leaf.condition;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Leaf.Condition;
 
-namespace DisciplineOak.Execution.Task.leaf.condition
+namespace DisciplineOak.Execution.Task.Leaf.Condition
 {
 	public abstract class ExecutionCondition : ExecutionLeaf
 	{

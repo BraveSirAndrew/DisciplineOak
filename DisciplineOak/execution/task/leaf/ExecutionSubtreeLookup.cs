@@ -2,17 +2,17 @@
  * ExecutionSubtreeLookup is the ExecutionTask that knows how to run a
  * ModelExecutionSubtreeLookup.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Core.@event;
-using DisciplineOak.model.Core;
-using DisciplineOak.model.Task.Leaf;
+using DisciplineOak.Execution.Core.Events;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Leaf;
 
-namespace DisciplineOak.Execution.Task.leaf
+namespace DisciplineOak.Execution.Task.Leaf
 {
 	public class ExecutionSubtreeLookup : ExecutionLeaf
 	{

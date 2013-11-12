@@ -1,4 +1,4 @@
-﻿namespace DisciplineOak.Model.Task.composite
+﻿namespace DisciplineOak.Model.Task.Composite
 {
 	public enum ParallelPolicy
 	{

@@ -2,16 +2,16 @@
  * ExecutionDynamicPriorityList is the ExecutionTask that knows how to run a
  * ModelDynamicPriorityList.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Core.@event;
+using DisciplineOak.Execution.Core.Events;
 using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.composite;
+using DisciplineOak.Model.Task.Composite;
 
 namespace DisciplineOak.Execution.Task.Composite
 {

@@ -1,18 +1,15 @@
 ﻿/**
  * Exception thrown when there is an error in the ticking process of a task.
  * 
- * @author Ricardo Juan Palma Durán
  * 
  */
 
-namespace DisciplineOak.Exception
-{
-	public abstract class TickException : System.Exception
-	{
-		protected TickException()
-		{
-		}
+using System;
 
+namespace DisciplineOak.Exceptions
+{
+	public abstract class TickException : Exception
+	{
 		protected TickException(string msg) : base(msg)
 		{
 		}

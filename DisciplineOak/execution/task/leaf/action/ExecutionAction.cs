@@ -2,14 +2,14 @@
  * ExecutionAction is the base class of all of the class that are able to run
  * actions in the game (that is, subclasses of ModelAction).
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.model.Core;
-using DisciplineOak.model.Task.Leaf.action;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Leaf.Action;
 
 namespace DisciplineOak.Execution.Task.leaf.action
 {

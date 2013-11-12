@@ -2,7 +2,7 @@
  * ExecutionRandomSequence is the ExecutionTask that knows how to run a
  * ModelRandomSequence.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -10,11 +10,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Core.@event;
-using DisciplineOak.model.Core;
-using DisciplineOak.model.Task.Composite;
+using DisciplineOak.Execution.Core.Events;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Composite;
 
-namespace DisciplineOak.Execution.Task.composite
+namespace DisciplineOak.Execution.Task.Composite
 {
 	public class ExecutionRandomSequence : ExecutionComposite
 	{

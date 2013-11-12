@@ -15,7 +15,7 @@
  * value of a variable of the task's state. The way the task's state is
  * populated is not defined.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 

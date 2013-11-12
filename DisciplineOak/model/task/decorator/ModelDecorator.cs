@@ -18,13 +18,13 @@
  * it fails.
  * </ul>
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.Model.Task.decorator
+namespace DisciplineOak.Model.Task.Decorator
 {
 	public abstract class ModelDecorator : ModelTask
 	{

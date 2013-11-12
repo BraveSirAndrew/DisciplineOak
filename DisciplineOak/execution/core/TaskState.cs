@@ -2,7 +2,7 @@
  * Default implementation of the {@link ITaskState} interface. It provides
  * methods for modifying the set of variables stored by the TaskState.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 

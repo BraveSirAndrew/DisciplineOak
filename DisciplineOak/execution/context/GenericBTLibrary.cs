@@ -3,13 +3,13 @@
  * uses a Hashtable to map tree names to actual trees. This class also defines
  * methods for adding behaviour trees to the library itself.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.model.Core;
+using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Execution.Context
 {

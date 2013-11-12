@@ -1,7 +1,7 @@
 ﻿/**
  * A ModelSucceeder is a decorator that makes its child succeeds no matter if it actually fails.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -9,7 +9,7 @@ using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Decorator;
 using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.Model.Task.decorator
+namespace DisciplineOak.Model.Task.Decorator
 {
 	public class ModelSucceeder : ModelDecorator
 	{

@@ -13,11 +13,11 @@
  * <p>
  * Behaviour trees are represented by the ModelTask class.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
-using DisciplineOak.model.Core;
+using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Execution.Core
 {

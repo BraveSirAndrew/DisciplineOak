@@ -2,7 +2,7 @@
  * ExecutionRandomSelector is the ExecutionTask that knows how to run a
  * ModelRandomSelector.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -10,9 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Core.@event;
+using DisciplineOak.Execution.Core.Events;
 using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.composite;
+using DisciplineOak.Model.Task.Composite;
 
 namespace DisciplineOak.Execution.Task.Composite
 {

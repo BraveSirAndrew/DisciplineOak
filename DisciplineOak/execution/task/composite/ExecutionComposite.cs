@@ -2,14 +2,14 @@
  * Base class for all the ExecutionTask subclasses that are able to run
  * composite tasks (that is, classes that inherit from ModelComposite).
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.composite;
+using DisciplineOak.Model.Task.Composite;
 
 namespace DisciplineOak.Execution.Task.Composite
 {

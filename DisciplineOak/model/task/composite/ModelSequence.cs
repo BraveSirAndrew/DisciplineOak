@@ -8,7 +8,7 @@
  * execution of the currently active child ends in failure, the whole
  * ModeSequence also fails.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -16,7 +16,7 @@ using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Composite;
 using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.Model.Task.composite
+namespace DisciplineOak.Model.Task.Composite
 {
 	public class ModelSequence : ModelComposite
 	{

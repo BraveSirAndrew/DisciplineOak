@@ -1,15 +1,15 @@
 ﻿/**
  * A ModelFailure represents a task that always fails.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Task.leaf;
-using DisciplineOak.model.Core;
+using DisciplineOak.Execution.Task.Leaf;
+using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelFailure : ModelLeaf
 	{

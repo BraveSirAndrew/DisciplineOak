@@ -36,15 +36,15 @@
  * @see ModelTask
  * @see BTExecutor
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using System.Collections.Generic;
-using DisciplineOak.Exception;
-using DisciplineOak.Execution.Core.@event;
-using DisciplineOak.model.Core;
+using DisciplineOak.Exceptions;
+using DisciplineOak.Execution.Core.Events;
+using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Execution.Core
 {

@@ -2,15 +2,15 @@
  * A ModelVariableRenamer is a task that renames a variable of the context. This
  * task just takes one variable of the context and changes its name.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Task.leaf;
-using DisciplineOak.model.Core;
+using DisciplineOak.Execution.Task.Leaf;
+using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelVariableRenamer : ModelLeaf
 	{

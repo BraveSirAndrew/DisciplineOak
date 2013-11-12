@@ -4,15 +4,15 @@
  * running. For that period of time, the task will be evaluated to
  * Status.RUNNING. Then, the task will return Status.SUCCESS.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Task.leaf;
-using DisciplineOak.model.Core;
+using DisciplineOak.Execution.Task.Leaf;
+using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelWait : ModelLeaf
 	{

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DisciplineOak.model.Core
+namespace DisciplineOak.Model.Core
 {
 	/**
 	 * The position of a ModelTask in a behaviour tree. It contains the sequence
@@ -13,7 +13,7 @@ namespace DisciplineOak.model.Core
 	 * (0) of the fifth child (4) of the second child (1) of the root. En empty
 	 * list of moves represents the root.
 	 * 
-	 * @author Ricardo Juan Palma Durán
+	 
 	 * 
 	 */
 	public class Position

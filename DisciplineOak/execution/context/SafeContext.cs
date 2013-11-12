@@ -14,14 +14,14 @@
  * interact with the SafeContext in just the same way it would with the input
  * context.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.model.Core;
+using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Execution.Context
 {

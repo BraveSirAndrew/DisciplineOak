@@ -5,7 +5,7 @@
  * the variable name cannot be found, its value is retrieved from the parent
  * context.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 

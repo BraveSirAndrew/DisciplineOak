@@ -8,15 +8,15 @@
  * is used to retrieve <i>A</i> and use it within <i>B</i>. Trees are indexed by
  * names, so this task needs the name of the tree that it will emulate.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Task.leaf;
-using DisciplineOak.model.Core;
+using DisciplineOak.Execution.Task.Leaf;
+using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.model.Task.Leaf
+namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelSubtreeLookup : ModelLeaf
 	{

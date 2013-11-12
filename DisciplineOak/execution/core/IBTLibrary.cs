@@ -5,11 +5,11 @@
  * This is an <i>iterable</i> interface (it : {@link Iterable}) so that
  * all the behaviour trees of the library can be easily accessed.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
-using DisciplineOak.model.Core;
+using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Execution.Core
 {

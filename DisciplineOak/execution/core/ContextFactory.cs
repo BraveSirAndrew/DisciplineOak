@@ -3,7 +3,7 @@
  * of the framework to create instances of {@link IContext} objects that can be
  * used when running behaviour trees.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 

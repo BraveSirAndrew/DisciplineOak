@@ -2,16 +2,16 @@
  * Base class for all the ExecutionTask subclasses that are able to run
  * decorator tasks (that is, classes that inherit from ModelDecorator).
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
 using System;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.model.Core;
-using DisciplineOak.model.Task.Decorator;
+using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Decorator;
 
-namespace DisciplineOak.Execution.Task.decorator
+namespace DisciplineOak.Execution.Task.Decorator
 {
 	public abstract class ExecutionDecorator : ExecutionTask
 	{

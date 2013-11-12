@@ -1,11 +1,11 @@
 ﻿/**
  * Exception thrown when a task that cannot be ticked is ticked.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
-namespace DisciplineOak.Exception
+namespace DisciplineOak.Exceptions
 {
 	public class NotTickableException : TickException
 	{

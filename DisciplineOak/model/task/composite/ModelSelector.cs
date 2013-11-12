@@ -8,7 +8,7 @@
  * selector succeeds if one of the tasks succeeds, and fails if all the child
  * tasks fail.
  * 
- * @author Ricardo Juan Palma Durán
+ 
  * 
  */
 
@@ -16,7 +16,7 @@ using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Composite;
 using DisciplineOak.Model.Core;
 
-namespace DisciplineOak.Model.Task.composite
+namespace DisciplineOak.Model.Task.Composite
 {
 	public class ModelSelector : ModelComposite
 	{
