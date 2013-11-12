@@ -11,10 +11,10 @@
  */
 
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Task.Decorator;
-using DisciplineOak.Model.Core;
+using DisciplineOak.Execution.Task.decorator;
+using DisciplineOak.model.Core;
 
-namespace DisciplineOak.Model.Task.decorator
+namespace DisciplineOak.model.Task.Decorator
 {
 	public class ModelUntilFail : ModelDecorator
 	{

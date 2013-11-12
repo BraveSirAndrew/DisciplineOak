@@ -7,9 +7,9 @@
  * 
  */
 
-using DisciplineOak.Model.Core;
+using DisciplineOak.model.Core;
 
-namespace DisciplineOak.Model.Task.Leaf.action
+namespace DisciplineOak.model.Task.Leaf.action
 {
 	public abstract class ModelAction : ModelLeaf
 	{

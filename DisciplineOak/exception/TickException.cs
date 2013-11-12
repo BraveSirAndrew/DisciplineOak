@@ -5,11 +5,9 @@
  * 
  */
 
-using System;
-
-namespace DisciplineOak.exception
+namespace DisciplineOak.Exception
 {
-	public abstract class TickException : Exception
+	public abstract class TickException : System.Exception
 	{
 		protected TickException()
 		{

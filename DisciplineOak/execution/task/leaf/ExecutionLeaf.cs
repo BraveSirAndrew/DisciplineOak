@@ -9,10 +9,10 @@
 using System;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Core.@event;
-using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.Leaf;
+using DisciplineOak.model.Core;
+using DisciplineOak.model.Task.Leaf;
 
-namespace DisciplineOak.Execution.Task.Leaf
+namespace DisciplineOak.Execution.Task.leaf
 {
 	public abstract class ExecutionLeaf : ExecutionTask
 	{

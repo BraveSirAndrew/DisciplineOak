@@ -7,9 +7,9 @@
  * 
  */
 
-using DisciplineOak.Model.Core;
+using DisciplineOak.model.Core;
 
-namespace DisciplineOak.Model.Task.Leaf.condition
+namespace DisciplineOak.model.Task.Leaf.condition
 {
 	public abstract class ModelCondition : ModelLeaf
 	{

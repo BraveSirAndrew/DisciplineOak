@@ -9,10 +9,10 @@ using System;
 using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Core.@event;
-using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.decorator;
+using DisciplineOak.model.Core;
+using DisciplineOak.model.Task.Decorator;
 
-namespace DisciplineOak.Execution.Task.Decorator
+namespace DisciplineOak.Execution.Task.decorator
 {
 	public class ExecutionLimit : ExecutionDecorator
 	{
@@ -117,7 +117,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 			{
 				_numRunsSoFar = (int) state.GetStateVariable(StateVariableName);
 			}
-			catch (Exception e)
+			catch (System.Exception e)
 			{
 			}
 		}

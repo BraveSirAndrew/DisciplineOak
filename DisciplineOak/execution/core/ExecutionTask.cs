@@ -42,9 +42,9 @@
 
 using System;
 using System.Collections.Generic;
-using DisciplineOak.exception;
+using DisciplineOak.Exception;
 using DisciplineOak.Execution.Core.@event;
-using DisciplineOak.Model.Core;
+using DisciplineOak.model.Core;
 
 namespace DisciplineOak.Execution.Core
 {

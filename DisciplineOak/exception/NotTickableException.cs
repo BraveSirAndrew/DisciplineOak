@@ -5,9 +5,7 @@
  * 
  */
 
-using System;
-
-namespace DisciplineOak.exception
+namespace DisciplineOak.Exception
 {
 	public class NotTickableException : TickException
 	{

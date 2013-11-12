@@ -5,11 +5,9 @@
  * 
  */
 
-using System;
-
-namespace DisciplineOak.exception
+namespace DisciplineOak.Exception
 {
-	public class SpawnException : Exception
+	public class SpawnException : System.Exception
 	{
 		public SpawnException()
 		{

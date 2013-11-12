@@ -11,10 +11,10 @@ using System.Collections.Generic;
 using System.Linq;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Core.@event;
-using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.composite;
+using DisciplineOak.model.Core;
+using DisciplineOak.model.Task.Composite;
 
-namespace DisciplineOak.Execution.Task.Composite
+namespace DisciplineOak.Execution.Task.composite
 {
 	public class ExecutionRandomSequence : ExecutionComposite
 	{

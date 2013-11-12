@@ -1,8 +1,7 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
 
-namespace DisciplineOak.Model.Core
+namespace DisciplineOak.model.Core
 {
 	
 	///ModelTask is a class that models a node (task) of a behaviour tree in a

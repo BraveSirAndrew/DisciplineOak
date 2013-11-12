@@ -8,10 +8,10 @@
 
 using System;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.Leaf.condition;
+using DisciplineOak.model.Core;
+using DisciplineOak.model.Task.Leaf.condition;
 
-namespace DisciplineOak.Execution.Task.Leaf.Condition
+namespace DisciplineOak.Execution.Task.leaf.condition
 {
 	public abstract class ExecutionCondition : ExecutionLeaf
 	{

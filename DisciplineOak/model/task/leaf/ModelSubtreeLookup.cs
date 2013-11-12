@@ -13,10 +13,10 @@
  */
 
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Task.Leaf;
-using DisciplineOak.Model.Core;
+using DisciplineOak.Execution.Task.leaf;
+using DisciplineOak.model.Core;
 
-namespace DisciplineOak.Model.Task.Leaf
+namespace DisciplineOak.model.Task.Leaf
 {
 	public class ModelSubtreeLookup : ModelLeaf
 	{

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DisciplineOak.Model.Core
+namespace DisciplineOak.model.Core
 {
 	/**
 	 * The position of a ModelTask in a behaviour tree. It contains the sequence
@@ -44,7 +44,7 @@ namespace DisciplineOak.Model.Core
 		{
 			if (moves == null)
 			{
-				throw new Exception("The list of moves cannot be null");
+				throw new System.Exception("The list of moves cannot be null");
 			}
 
 			_moves = new List<int>();

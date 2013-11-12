@@ -6,8 +6,6 @@
  * 
  */
 
-using System;
-
 namespace DisciplineOak.exception
 {
 	public class IllegalReturnStatusException : TickException

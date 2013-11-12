@@ -37,7 +37,7 @@
 using System;
 using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Model.Core;
+using DisciplineOak.model.Core;
 
 namespace DisciplineOak.Execution.Context
 {

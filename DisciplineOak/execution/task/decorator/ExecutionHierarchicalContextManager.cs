@@ -10,10 +10,10 @@ using System;
 using DisciplineOak.Execution.Context;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Core.@event;
-using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.decorator;
+using DisciplineOak.model.Core;
+using DisciplineOak.model.Task.Decorator;
 
-namespace DisciplineOak.Execution.Task.Decorator
+namespace DisciplineOak.Execution.Task.decorator
 {
 	public class ExecutionHierarchicalContextManager : ExecutionDecorator
 	{

@@ -10,11 +10,11 @@
  */
 
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Task.Leaf;
-using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.decorator;
+using DisciplineOak.Execution.Task.leaf;
+using DisciplineOak.model.Core;
+using DisciplineOak.model.Task.Decorator;
 
-namespace DisciplineOak.Model.Task.Leaf
+namespace DisciplineOak.model.Task.Leaf
 {
 	public class ModelPerformInterruption : ModelLeaf
 	{

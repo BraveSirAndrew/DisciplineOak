@@ -8,10 +8,10 @@
 
 using System;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Model.Core;
-using DisciplineOak.Model.Task.Leaf.action;
+using DisciplineOak.model.Core;
+using DisciplineOak.model.Task.Leaf.action;
 
-namespace DisciplineOak.Execution.Task.Leaf.Action
+namespace DisciplineOak.Execution.Task.leaf.action
 {
 	public abstract class ExecutionAction : ExecutionLeaf
 	{

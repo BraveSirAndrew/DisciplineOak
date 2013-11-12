@@ -9,7 +9,7 @@
  * 
  */
 
-using DisciplineOak.Model.Core;
+using DisciplineOak.model.Core;
 
 namespace DisciplineOak.Execution.Core
 {
