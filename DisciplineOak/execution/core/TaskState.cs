@@ -13,22 +13,17 @@ namespace DisciplineOak.Execution.Core
 {
 	public class TaskState : ITaskState
 	{
-		/** The set of variables. */
-		private readonly Dictionary<string, Object> variables;
-
-		/**
-	 * Constructs an empty TaskState.
-	 */
-
+		
+		private readonly Dictionary<string, Object> _variables;
+		
 		public TaskState()
 		{
-			variables = new Dictionary<string, Object>();
+			_variables = new Dictionary<string, Object>();
 		}
-
-
+		
 		public Object GetStateVariable(string name)
 		{
-			return variables[name];
+			return _variables[name];
 		}
 
 		/**
@@ -44,20 +39,20 @@ namespace DisciplineOak.Execution.Core
 	 *         otherwise.
 	 */
 
-		public bool setStateVariable(string name, Object value)
+		public bool SetStateVariable(string name, Object value)
 		{
 			if (value == null)
 			{
-				return variables.Remove(name);
+				return _variables.Remove(name);
 			}
 
-			if (variables.ContainsKey(name))
+			if (_variables.ContainsKey(name))
 			{
-				variables[name] = value;
+				_variables[name] = value;
 				return false;
 			}
 
-			variables.Add(name, value);
+			_variables.Add(name, value);
 			return true;
 		}
 
@@ -65,9 +60,9 @@ namespace DisciplineOak.Execution.Core
 	 * Clears all the variables of the TaskState.
 	 */
 
-		public void clear()
+		public void Clear()
 		{
-			variables.Clear();
+			_variables.Clear();
 		}
 
 		/**
@@ -79,9 +74,9 @@ namespace DisciplineOak.Execution.Core
 	 *         false otherwise.
 	 */
 
-		public bool clearStateVariable(string name)
+		public bool ClearStateVariable(string name)
 		{
-			return variables.Remove(name);
+			return _variables.Remove(name);
 		}
 	}
 }

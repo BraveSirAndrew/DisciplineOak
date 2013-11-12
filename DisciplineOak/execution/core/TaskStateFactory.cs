@@ -32,7 +32,7 @@ namespace DisciplineOak.Execution.Core
 
 			foreach (var variable in variables)
 			{
-				taskState.setStateVariable(variable.Item1, variable.Item2);
+				taskState.SetStateVariable(variable.Item1, variable.Item2);
 			}
 
 			return taskState;
@@ -55,7 +55,7 @@ namespace DisciplineOak.Execution.Core
 
 			foreach (var variable in variables)
 			{
-				taskState.setStateVariable(variable.Key, variable.Value);
+				taskState.SetStateVariable(variable.Key, variable.Value);
 			}
 
 			return taskState;

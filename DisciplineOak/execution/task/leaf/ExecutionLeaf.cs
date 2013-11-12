@@ -27,7 +27,7 @@ namespace DisciplineOak.Execution.Task.Leaf
 	 *            the parent ExecutionTask of this task.
 	 */
 
-		public ExecutionLeaf(ModelTask modelTask, BTExecutor executor, ExecutionTask parent)
+		protected ExecutionLeaf(ModelTask modelTask, BTExecutor executor, ExecutionTask parent)
 			: base(modelTask, executor, parent)
 		{
 			if (!(modelTask is ModelLeaf))
@@ -41,7 +41,6 @@ namespace DisciplineOak.Execution.Task.Leaf
 	 * 
 	 * @see jbt.execution.core.ExecutionTask#statusChanged(jbt.execution.core.event.TaskEvent)
 	 */
-
 		public override void StatusChanged(TaskEvent e)
 		{
 		}

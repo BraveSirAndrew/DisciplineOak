@@ -47,7 +47,7 @@ namespace DisciplineOak.Execution.Task.Leaf
 			if (!(modelTask is ModelSubtreeLookup))
 			{
 				throw new ArgumentException("The ModelTask must subclass ModelSubtreeLookup but it inherits from " +
-				                            modelTask.GetType().Name);
+											modelTask.GetType().Name);
 			}
 		}
 
@@ -64,7 +64,7 @@ namespace DisciplineOak.Execution.Task.Leaf
 		{
 			/* Retrieve the tree to run from the context. */
 			treeToRun = Context.GetBT(
-				((ModelSubtreeLookup) ModelTask).TreeName);
+				((ModelSubtreeLookup)ModelTask).TreeName);
 
 			if (treeToRun == null)
 			{
@@ -75,9 +75,9 @@ namespace DisciplineOak.Execution.Task.Leaf
 			 * task the one continuin the work.
 			 */
 				Executor.RequestInsertionIntoList(BTExecutor.BTExecutorList.Tickable, this);
-//			System.err.println("Could not retrieve tree "
-//					+ ((ModelSubtreeLookup) this.getModelTask()).getTreeName()
-//					+ " from the context. Check if the context has been properly initialized.");
+				//			System.err.println("Could not retrieve tree "
+				//					+ ((ModelSubtreeLookup) this.getModelTask()).getTreeName()
+				//					+ " from the context. Check if the context has been properly initialized.");
 			}
 			else
 			{
@@ -97,7 +97,6 @@ namespace DisciplineOak.Execution.Task.Leaf
 	 * 
 	 * @see jbt.execution.core.ExecutionTask#internalTerminate()
 	 */
-
 		protected override void InternalTerminate()
 		{
 			if (treeRetrieved)
@@ -112,7 +111,6 @@ namespace DisciplineOak.Execution.Task.Leaf
 	 * 
 	 * @see jbt.execution.core.ExecutionTask#internalTick()
 	 */
-
 		protected override Status InternalTick()
 		{
 			if (treeRetrieved)

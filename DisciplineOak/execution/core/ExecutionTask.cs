@@ -52,9 +52,6 @@ namespace DisciplineOak.Execution.Core
 	{
 		private readonly BTExecutor _executor;
 		
-		/**
-	 * List of all the listeners that are listening to TaskEvent from this task.
-	 */
 		private readonly List<ITaskListener> _listeners;
 		private readonly ModelTask _modelTask;
 		/** Current status of the task. */
@@ -253,7 +250,7 @@ namespace DisciplineOak.Execution.Core
 		 * be inserted into the list of tickable nodes.
 		 */
 		protected abstract void InternalSpawn();
-
+		
 		/**
 		 * After spawning an ExecutionTask, <code>tick()</code> has to be called in
 		 * order to update it and keep track of its status.
