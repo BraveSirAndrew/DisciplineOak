@@ -111,7 +111,7 @@ namespace DisciplineOak.Execution.Task.Composite
 
 		protected override Status InternalTick()
 		{
-			var childStatus = _activeChild.GetStatus();
+			var childStatus = _activeChild.Status;
 
 			if (childStatus == Status.Running)
 			{

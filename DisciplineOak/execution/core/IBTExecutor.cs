@@ -17,12 +17,18 @@
  * 
  */
 
+using System;
+using System.Collections.Generic;
 using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Execution.Core
 {
 	public interface IBTExecutor
 	{
+		event EventHandler TickStarted;
+		event EventHandler TickCompleted;
+		List<ExecutionTask> TickableTasks { get; }
+
 		/**
 	 * This method gives the underlying BT a little amount of time to run.
 	 * <p>

@@ -70,7 +70,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 
 		protected override Status InternalTick()
 		{
-			Status childStatus = _child.GetStatus();
+			Status childStatus = _child.Status;
 
 			/*
 		 * If the child has finished, spawn it again

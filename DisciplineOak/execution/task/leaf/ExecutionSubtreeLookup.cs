@@ -115,7 +115,7 @@ namespace DisciplineOak.Execution.Task.Leaf
 		{
 			if (treeRetrieved)
 			{
-				return executionTree.GetStatus();
+				return executionTree.Status;
 			}
 			return Status.Failure;
 		}

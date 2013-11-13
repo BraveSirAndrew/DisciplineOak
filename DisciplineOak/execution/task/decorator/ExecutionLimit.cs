@@ -100,7 +100,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 
 		protected override Status InternalTick()
 		{
-			return _child != null ? _child.GetStatus() : Status.Failure;
+			return _child != null ? _child.Status : Status.Failure;
 		}
 
 		/**
