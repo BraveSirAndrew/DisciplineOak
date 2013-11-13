@@ -15,14 +15,14 @@ namespace DisciplineOak.Execution.Task.Leaf
 	public class ExecutionWait : ExecutionLeaf
 	{
 		/** Duration of the wait task. */
-		private readonly long duration;
+		private long duration;
 		/**
 	 * Starting time, measured in nanoseconds. Note that this value is obtained
 	 * by {@link System#nanoTime()}, so it is not related to any notion of
 	 * system or wall-clock time. Therefore, it can only be used to measure time
 	 * intervals.
 	 */
-		private long startTime;
+		private long _startTime;
 
 		/**
 	 * Creates an ExecutionWait that is able to run a ModelWait task and that is
@@ -43,7 +43,12 @@ namespace DisciplineOak.Execution.Task.Leaf
 			{
 				throw new ArgumentException("The ModelTask must subclass ModelWait but it inherits from " + modelTask.GetType().Name);
 			}
+			
+			Initialize(modelTask);
+		}
 
+		private void Initialize(ModelTask modelTask)
+		{
 			duration = ((ModelWait) modelTask).Duration;
 		}
 
@@ -56,7 +61,7 @@ namespace DisciplineOak.Execution.Task.Leaf
 		protected override void InternalSpawn()
 		{
 			Executor.RequestInsertionIntoList(BTExecutor.BTExecutorList.Tickable, this);
-			startTime = DateTime.Now.Ticks;
+			_startTime = DateTime.Now.Ticks;
 		}
 
 		/**
@@ -78,7 +83,7 @@ namespace DisciplineOak.Execution.Task.Leaf
 
 		protected override Status InternalTick()
 		{
-			long estimatedTime = DateTime.Now.Ticks - startTime;
+			long estimatedTime = DateTime.Now.Ticks - _startTime;
 
 			if ((TimeSpan.FromTicks(estimatedTime)).TotalMilliseconds >= duration)
 			{
@@ -96,24 +101,13 @@ namespace DisciplineOak.Execution.Task.Leaf
 		protected override void RestoreState(ITaskState state)
 		{
 		}
-
-		/**
-	 * Does nothing.
-	 * 
-	 * @see jbt.execution.core.ExecutionTask#storeState()
-	 */
-
+	
 		protected override ITaskState StoreState()
 		{
 			return null;
 		}
 
-		/**
-	 * Does nothing.
-	 * 
-	 * @see jbt.execution.core.ExecutionTask#storeTerminationState()
-	 */
-
+	
 		protected override ITaskState StoreTerminationState()
 		{
 			return null;

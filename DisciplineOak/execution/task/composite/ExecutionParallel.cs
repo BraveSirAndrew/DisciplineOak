@@ -19,9 +19,9 @@ namespace DisciplineOak.Execution.Task.Composite
 	{
 		/** Policy of the parallel task. */
 		/** List of the ExecutionTask children of this task. */
-		private readonly List<ExecutionTask> _executionChildren;
-		private readonly List<ModelTask> _modelChildren;
-		private readonly ParallelPolicy _policy;
+		private List<ExecutionTask> _executionChildren;
+		private List<ModelTask> _modelChildren;
+		private ParallelPolicy _policy;
 
 		/**
 		 * Creates an ExecutionParallel that is able to run a ModelParallel task and
@@ -44,8 +44,13 @@ namespace DisciplineOak.Execution.Task.Composite
 				                            modelTask.GetType().Name);
 			}
 
-			_policy = ((ModelParallel) modelTask).Policy;
+			_policy = ((ModelParallel)modelTask).Policy;
 			_modelChildren = modelTask.Children;
+			Initialize();
+		}
+
+		private void Initialize()
+		{
 			_executionChildren = new List<ExecutionTask>();
 		}
 

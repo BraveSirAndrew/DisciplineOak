@@ -18,7 +18,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 	public class ExecutionHierarchicalContextManager : ExecutionDecorator
 	{
 		/** The child task. */
-		private ExecutionTask child;
+		private ExecutionTask _child;
 
 		/**
 	 * Constructs an ExecutionHierarchicalContextManager that knows how to run a
@@ -54,10 +54,10 @@ namespace DisciplineOak.Execution.Task.Decorator
 		{
 			var newContext = new HierarchicalContext();
 			newContext.SetParent(Context);
-			child = ((ModelDecorator) ModelTask).getChild().CreateExecutor(
+			_child = ((ModelDecorator) ModelTask).getChild().CreateExecutor(
 				Executor, this);
-			child.AddTaskListener(this);
-			child.Spawn(newContext);
+			_child.AddTaskListener(this);
+			_child.Spawn(newContext);
 		}
 
 		/**
@@ -68,7 +68,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 
 		protected override void InternalTerminate()
 		{
-			child.Terminate();
+			_child.Terminate();
 		}
 
 		/**
@@ -79,7 +79,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 
 		protected override Status InternalTick()
 		{
-			return child.GetStatus();
+			return _child.GetStatus();
 		}
 
 		/**

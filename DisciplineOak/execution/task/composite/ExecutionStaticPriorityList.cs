@@ -17,18 +17,16 @@ namespace DisciplineOak.Execution.Task.Composite
 {
 	public class ExecutionStaticPriorityList : ExecutionComposite
 	{
-		/** List of the children (ModelTask) of this task. */
-		/** Currently active child. */
-		private ExecutionTask activeChild;
-		private int activeChildIndex;
-		private List<ModelTask> children;
+		private ExecutionTask _activeChild;
+		private int _activeChildIndex;
+		private List<ModelTask> _children;
 		/**
 	 * List containing the IBTExecutors in charge of running the guards. The
 	 * i-th element of this list manages the guard of the i-th child (
 	 * {@link #children}). Note that if a guard is null, its corresponding
 	 * IBTExecutor is also null.
 	 */
-		private List<BTExecutor> guardsExecutors;
+		private List<BTExecutor> _guardsExecutors;
 		/**
 	 * This List contains the current evaluation status of all the guards. If a
 	 * guard is null, its corresponding status is {@link Status#SUCCESS} (null
@@ -75,21 +73,21 @@ namespace DisciplineOak.Execution.Task.Composite
 
 		protected override void InternalSpawn()
 		{
-			children = ModelTask.Children;
+			_children = ModelTask.Children;
 
 			/* Initialize guard executors. */
-			guardsExecutors = new List<BTExecutor>();
+			_guardsExecutors = new List<BTExecutor>();
 			guardsResults = new List<Status>();
-			foreach (ModelTask child in children)
+			foreach (ModelTask child in _children)
 			{
 				if (child.Guard != null)
 				{
-					guardsExecutors.Add(new BTExecutor(child.Guard, Context));
+					_guardsExecutors.Add(new BTExecutor(child.Guard, Context));
 					guardsResults.Add(Status.Running);
 				}
 				else
 				{
-					guardsExecutors.Add(null);
+					_guardsExecutors.Add(null);
 					guardsResults.Add(Status.Success);
 				}
 			}
@@ -132,11 +130,11 @@ namespace DisciplineOak.Execution.Task.Composite
 			 */
 				spawnFailed = false;
 				stillNotSpawned = false;
-				activeChildIndex = activeGuard.Item2;
-				activeChild = children[activeChildIndex].CreateExecutor(
+				_activeChildIndex = activeGuard.Item2;
+				_activeChild = _children[_activeChildIndex].CreateExecutor(
 					Executor, this);
-				activeChild.AddTaskListener(this);
-				activeChild.Spawn(Context);
+				_activeChild.AddTaskListener(this);
+				_activeChild.Spawn(Context);
 			}
 
 			/* Insert into the list of tickable nodes if required. */
@@ -196,11 +194,11 @@ namespace DisciplineOak.Execution.Task.Composite
 				 */
 					spawnFailed = false;
 					stillNotSpawned = false;
-					activeChildIndex = activeGuard.Item2;
-					activeChild = children[activeChildIndex].CreateExecutor(
+					_activeChildIndex = activeGuard.Item2;
+					_activeChild = _children[_activeChildIndex].CreateExecutor(
 						Executor, this);
-					activeChild.AddTaskListener(this);
-					activeChild.Spawn(Context);
+					_activeChild.AddTaskListener(this);
+					_activeChild.Spawn(Context);
 
 					Executor.RequestRemovalFromList(BTExecutor.BTExecutorList.Tickable, this);
 				}
@@ -209,7 +207,7 @@ namespace DisciplineOak.Execution.Task.Composite
 			}
 
 			/* If this point has been reached, there must be an active child. */
-			return activeChild.GetStatus();
+			return _activeChild.GetStatus();
 		}
 
 		/**
@@ -258,13 +256,13 @@ namespace DisciplineOak.Execution.Task.Composite
 		 * have failed or not started yet. In such a case, if it is terminated,
 		 * "this.activeChild" will be null.
 		 */
-			if (activeChild != null)
+			if (_activeChild != null)
 			{
-				activeChild.Terminate();
+				_activeChild.Terminate();
 			}
 
 			/* Terminate the guards executors. */
-			foreach (BTExecutor guardExecutor in guardsExecutors)
+			foreach (BTExecutor guardExecutor in _guardsExecutors)
 			{
 				if (guardExecutor != null)
 				{
@@ -282,9 +280,9 @@ namespace DisciplineOak.Execution.Task.Composite
 
 		private void resetGuardsEvaluation()
 		{
-			for (int i = 0; i < guardsExecutors.Count; i++)
+			for (int i = 0; i < _guardsExecutors.Count; i++)
 			{
-				BTExecutor guardExecutor = guardsExecutors[i];
+				BTExecutor guardExecutor = _guardsExecutors[i];
 
 				if (guardExecutor != null)
 				{
@@ -294,7 +292,7 @@ namespace DisciplineOak.Execution.Task.Composite
 						Context);
 					newExecutor.CopyTasksStates(guardExecutor);
 					newExecutor.Tick();
-					guardsExecutors[i] = newExecutor;
+					_guardsExecutors[i] = newExecutor;
 				}
 			}
 		}
@@ -320,9 +318,9 @@ namespace DisciplineOak.Execution.Task.Composite
 			bool oneRunning = false;
 
 			/* First, evaluate all the guards that have not finished yet. */
-			for (int i = 0; i < guardsExecutors.Count; i++)
+			for (int i = 0; i < _guardsExecutors.Count; i++)
 			{
-				IBTExecutor guardExecutor = guardsExecutors[i];
+				IBTExecutor guardExecutor = _guardsExecutors[i];
 				if (guardExecutor != null)
 				{
 					if (guardsResults[i] == Status.Running)

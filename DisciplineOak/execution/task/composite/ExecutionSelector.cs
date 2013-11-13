@@ -19,10 +19,10 @@ namespace DisciplineOak.Execution.Task.Composite
 	{
 		/** Index of the active child. */
 		/** The currently active child. */
-		private ExecutionTask activeChild;
-		private int activeChildIndex;
+		private ExecutionTask _activeChild;
+		private int _activeChildIndex;
 		/** List of the ModelTask children of the selector. */
-		private List<ModelTask> children;
+		private List<ModelTask> _children;
 
 		/**
 	 * Creates an ExecutionSelector that is able to run a ModelSelector task and
@@ -51,14 +51,13 @@ namespace DisciplineOak.Execution.Task.Composite
 	 * 
 	 * @see jbt.execution.core.ExecutionTask#internalSpawn()
 	 */
-
 		protected override void InternalSpawn()
 		{
-			activeChildIndex = 0;
-			children = ModelTask.Children;
-			activeChild = children[activeChildIndex].CreateExecutor(Executor, this);
-			activeChild.AddTaskListener(this);
-			activeChild.Spawn(Context);
+			_activeChildIndex = 0;
+			_children = ModelTask.Children;
+			_activeChild = _children[_activeChildIndex].CreateExecutor(Executor, this);
+			_activeChild.AddTaskListener(this);
+			_activeChild.Spawn(Context);
 		}
 
 		/**
@@ -69,7 +68,7 @@ namespace DisciplineOak.Execution.Task.Composite
 
 		protected override void InternalTerminate()
 		{
-			activeChild.Terminate();
+			_activeChild.Terminate();
 		}
 
 		/**
@@ -88,7 +87,7 @@ namespace DisciplineOak.Execution.Task.Composite
 
 		protected override Status InternalTick()
 		{
-			Status childStatus = activeChild.GetStatus();
+			Status childStatus = _activeChild.GetStatus();
 
 			if (childStatus == Status.Running)
 			{
@@ -102,7 +101,7 @@ namespace DisciplineOak.Execution.Task.Composite
 			 * If the current child has failed, and it was the last one, return
 			 * failure.
 			 */
-			if (activeChildIndex == children.Count - 1)
+			if (_activeChildIndex == _children.Count - 1)
 			{
 				return Status.Failure;
 			}
@@ -110,10 +109,10 @@ namespace DisciplineOak.Execution.Task.Composite
 				 * Otherwise, if it was not the last child, spawn the next
 				 * child.
 				 */
-			activeChildIndex++;
-			activeChild = children[activeChildIndex].CreateExecutor(Executor, this);
-			activeChild.AddTaskListener(this);
-			activeChild.Spawn(Context);
+			_activeChildIndex++;
+			_activeChild = _children[_activeChildIndex].CreateExecutor(Executor, this);
+			_activeChild.AddTaskListener(this);
+			_activeChild.Spawn(Context);
 			return Status.Running;
 		}
 

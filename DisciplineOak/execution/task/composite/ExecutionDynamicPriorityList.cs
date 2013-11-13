@@ -106,7 +106,7 @@ namespace DisciplineOak.Execution.Task.Composite
 			}
 
 			/* Evaluate guards. */
-			resetGuardsEvaluation();
+			ResetGuardsEvaluation();
 			var activeGuard = EvaluateGuards();
 
 			/* If all guards have failed, the spawning process has also failed. */
@@ -136,7 +136,7 @@ namespace DisciplineOak.Execution.Task.Composite
 				_activeChild.Spawn(Context);
 
 				/* Reset the guards evaluators. */
-				resetGuardsEvaluation();
+				ResetGuardsEvaluation();
 			}
 		}
 
@@ -222,7 +222,7 @@ namespace DisciplineOak.Execution.Task.Composite
 					_activeChild.Spawn(Context);
 
 					/* Reset the guards evaluators. */
-					resetGuardsEvaluation();
+					ResetGuardsEvaluation();
 				}
 
 				return Status.Running;
@@ -257,14 +257,14 @@ namespace DisciplineOak.Execution.Task.Composite
 				_activeChild.AddTaskListener(this);
 				_activeChild.Spawn(Context);
 
-				resetGuardsEvaluation();
+				ResetGuardsEvaluation();
 				return Status.Running;
 			}
 			/*
 				 * If the child with the highest priority guard has not changed, return the status
 				 * of the active child.
 				 */
-			resetGuardsEvaluation();
+			ResetGuardsEvaluation();
 			return _activeChild.GetStatus();
 		}
 
@@ -305,8 +305,7 @@ namespace DisciplineOak.Execution.Task.Composite
 	 * {@link #guardsExecutors}) ready to start again the evaluation of the guards. It internally
 	 * terminates the IBTExecutor of each guard, creates a new one, and then ticks it.
 	 */
-
-		private void resetGuardsEvaluation()
+		private void ResetGuardsEvaluation()
 		{
 			for (int i = 0; i < _guardsExecutors.Count; i++)
 			{

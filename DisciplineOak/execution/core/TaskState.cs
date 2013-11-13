@@ -2,10 +2,7 @@
  * Default implementation of the {@link ITaskState} interface. It provides
  * methods for modifying the set of variables stored by the TaskState.
  * 
- 
- * 
  */
-
 using System;
 using System.Collections.Generic;
 
@@ -73,7 +70,6 @@ namespace DisciplineOak.Execution.Core
 	 * @return true if the variable existed before calling this method, and
 	 *         false otherwise.
 	 */
-
 		public bool ClearStateVariable(string name)
 		{
 			return _variables.Remove(name);

@@ -18,19 +18,18 @@ namespace DisciplineOak.Execution.Task.Composite
 {
 	public class ExecutionRandomSelector : ExecutionComposite
 	{
-		/**
-		 * Currently active child.
-		 */
 		private ExecutionTask _activeChild;
 		/**
 		 * The currently active child of the selector. This integer is an index over
 		 * the elements of {@link #order}.
 		 */
 		private int _activeChildIndex;
+
 		/**
 		 * The list of children of this task.
 		 */
 		private List<ModelTask> _children;
+
 		/**
 		 * List storing a sequence of integers with the order in which the children
 		 * of this task must be evaluated. This list is computed when the task is
@@ -48,6 +47,7 @@ namespace DisciplineOak.Execution.Task.Composite
 		 * @param parent
 		 *            the parent ExecutionTask of this task.
 		 */
+
 		public ExecutionRandomSelector(ModelTask modelTask, BTExecutor executor, ExecutionTask parent)
 			: base(modelTask, executor, parent)
 		{
@@ -62,6 +62,7 @@ namespace DisciplineOak.Execution.Task.Composite
 		 * 
 		 * @see jbt.execution.core.ExecutionTask#internalSpawn()
 		 */
+
 		protected override void InternalSpawn()
 		{
 			_children = ModelTask.Children;
@@ -92,6 +93,7 @@ namespace DisciplineOak.Execution.Task.Composite
 		 * 
 		 * @see jbt.execution.core.ExecutionTask#internalTerminate()
 		 */
+
 		protected override void InternalTerminate()
 		{
 			_activeChild.Terminate();
@@ -106,6 +108,7 @@ namespace DisciplineOak.Execution.Task.Composite
 		 * 
 		 * @see jbt.execution.core.ExecutionTask#internalTick()
 		 */
+
 		protected override Status InternalTick()
 		{
 			var childStatus = _activeChild.GetStatus();
@@ -137,7 +140,6 @@ namespace DisciplineOak.Execution.Task.Composite
 		 * 
 		 * @see jbt.execution.core.ExecutionTask#restoreState(ITaskState)
 		 */
-
 		protected override void RestoreState(ITaskState state)
 		{
 		}

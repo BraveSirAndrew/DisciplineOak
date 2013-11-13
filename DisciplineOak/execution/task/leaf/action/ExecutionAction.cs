@@ -29,11 +29,12 @@ namespace DisciplineOak.Execution.Task.Leaf.Action
 		protected ExecutionAction(ModelTask modelTask, BTExecutor executor, ExecutionTask parent)
 			: base(modelTask, executor, parent)
 		{
-			if (!(modelTask is ModelAction))
+			if (modelTask != null && !(modelTask is ModelAction))
 			{
 				throw new ArgumentException("The ModelTask must subclass ModelAction but it inherits from " +
 				                            modelTask.GetType().Name);
 			}
 		}
+
 	}
 }

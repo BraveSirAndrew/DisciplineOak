@@ -1,8 +1,5 @@
 ﻿/**
  * A ModelFailure represents a task that always fails.
- * 
- 
- * 
  */
 
 using DisciplineOak.Execution.Core;
@@ -13,13 +10,6 @@ namespace DisciplineOak.Model.Task.Leaf
 {
 	public class ModelFailure : ModelLeaf
 	{
-		/**
-	 * Constructor.
-	 * 
-	 * @param guard
-	 *            the guard of the ModelFailure, which may be null.
-	 */
-
 		public ModelFailure(ModelTask guard) : base(guard)
 		{
 		}

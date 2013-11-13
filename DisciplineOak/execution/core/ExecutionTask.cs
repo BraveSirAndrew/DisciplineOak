@@ -51,7 +51,7 @@ namespace DisciplineOak.Execution.Core
 	public abstract class ExecutionTask : ITaskListener
 	{
 		private readonly BTExecutor _executor;
-		
+
 		private readonly List<ITaskListener> _listeners;
 		private readonly ModelTask _modelTask;
 		/** Current status of the task. */
@@ -250,7 +250,7 @@ namespace DisciplineOak.Execution.Core
 		 * be inserted into the list of tickable nodes.
 		 */
 		protected abstract void InternalSpawn();
-		
+
 		/**
 		 * After spawning an ExecutionTask, <code>tick()</code> has to be called in
 		 * order to update it and keep track of its status.
@@ -292,7 +292,7 @@ namespace DisciplineOak.Execution.Core
 			}
 
 			/* If the task has been terminated, do nothing. */
-			if (_terminated) 
+			if (_terminated)
 				return Status.Terminated;
 
 			/* Otherwise, perform the actual tick by calling "internalTick()". */
@@ -707,7 +707,7 @@ namespace DisciplineOak.Execution.Core
 		{
 			var parentsChildren = _parent.ModelTask.Children;
 			var iterator = parentsChildren.GetEnumerator();
-			var thisModelTask = ModelTask;
+			var thisModelTask = _modelTask;
 
 			for (var i = 0; i < parentsChildren.Count; i++)
 			{
