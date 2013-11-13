@@ -5,7 +5,6 @@
  * Also, since a context must contain a set of behaviour trees, this class
  * defines some methods to add behaviour trees to the context.
  * 
- 
  * 
  */
 
@@ -21,29 +20,16 @@ namespace DisciplineOak.Execution.Context
 		private readonly GenericBTLibrary _library;
 		private readonly Dictionary<string, object> _variables;
 
-		/**
-		 * Default constructor. Constructs an empty BasicContext.
-		 */
 		public BasicContext()
 		{
 			_variables = new Dictionary<string, object>();
 			_library = new GenericBTLibrary();
 		}
 
-		/**
-		 * 
-		 * @see es.ucm.bt.core.IContext#getVariable(java.lang.string)
-		 */
-		public Object this[string name]
+		public object this[string name]
 		{
 			get { return _variables[name]; }
 		}
-
-		/**
-		 * 
-		 * @see es.ucm.bt.core.IContext#setVariable(java.lang.string,
-		 *      java.lang.Object)
-		 */
 
 		public bool SetVariable(string name, Object value)
 		{
@@ -61,21 +47,11 @@ namespace DisciplineOak.Execution.Context
 			_variables.Add(name, value);
 			return false;
 		}
-
-		/**
-	 * 
-	 * @see es.ucm.bt.core.IContext#clear()
-	 */
-
+		
 		public void Clear()
 		{
 			_variables.Clear();
 		}
-
-		/**
-	 * 
-	 * @see jbt.execution.core.IContext#clearVariable(java.lang.string)
-	 */
 
 		public bool ClearVariable(string name)
 		{
@@ -118,7 +94,6 @@ namespace DisciplineOak.Execution.Context
 	 * @return true if there was already a tree with name <code>name</code>, and
 	 *         false otherwise.
 	 */
-
 		public bool AddBT(string name, ModelTask tree)
 		{
 			return _library.addBT(name, tree);
