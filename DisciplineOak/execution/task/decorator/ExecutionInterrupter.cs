@@ -122,7 +122,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 				Executor.UnregisterInterrupter(this);
 				return _statusSet;
 			}
-			Status childStatus = _executionChild.GetStatus();
+			Status childStatus = _executionChild.Status;
 			if (childStatus != Status.Running)
 			{
 				/*

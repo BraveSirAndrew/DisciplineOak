@@ -207,7 +207,7 @@ namespace DisciplineOak.Execution.Task.Composite
 			}
 
 			/* If this point has been reached, there must be an active child. */
-			return _activeChild.GetStatus();
+			return _activeChild.Status;
 		}
 
 		/**

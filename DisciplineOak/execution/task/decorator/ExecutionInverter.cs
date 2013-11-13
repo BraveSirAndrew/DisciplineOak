@@ -77,7 +77,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 		protected override Status InternalTick()
 		{
 			/* Just inverts the status code. */
-			Status childStatus = child.GetStatus();
+			Status childStatus = child.Status;
 			if (childStatus == Status.Running)
 			{
 				return Status.Running;

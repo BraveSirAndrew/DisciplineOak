@@ -239,7 +239,7 @@ namespace DisciplineOak.Execution.Task.Composite
 				/*
 			 * If the guards are being evaluated, return the status of the active child.
 			 */
-				return _activeChild.GetStatus();
+				return _activeChild.Status;
 			}
 			if (activeGuard.Item2 != _activeChildIndex)
 			{
@@ -265,7 +265,7 @@ namespace DisciplineOak.Execution.Task.Composite
 				 * of the active child.
 				 */
 			ResetGuardsEvaluation();
-			return _activeChild.GetStatus();
+			return _activeChild.Status;
 		}
 
 		/**

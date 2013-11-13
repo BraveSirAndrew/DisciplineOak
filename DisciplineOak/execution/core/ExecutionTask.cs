@@ -109,6 +109,43 @@ namespace DisciplineOak.Execution.Core
 			}
 		}
 
+		public Status Status
+		{
+			get { return _status; }
+		}
+
+		public BTExecutor Executor
+		{
+			get { return _executor; }
+		}
+
+		public ModelTask ModelTask
+		{
+			get { return _modelTask; }
+		}
+
+		/**
+	 * Returns the position of the ExecutionTask in the execution tree. Note
+	 * that such position is not necessarily that of the underlying ModelTask.
+	 * 
+	 * @return the position of the ExecutionTask in the execution tree.
+	 */
+
+		public Position Position
+		{
+			get { return _position; }
+		}
+
+		public bool Spawned
+		{
+			get { return _spawnable == false; }
+		}
+
+		public bool HasTerminated
+		{
+			get { return _terminated; }
+		}
+
 		public abstract void StatusChanged(TaskEvent e);
 
 		/**
@@ -537,78 +574,6 @@ namespace DisciplineOak.Execution.Core
 		}
 
 		/**
-	 * 
-	 * @see jbt.execution.core.event.ITaskListener#statusChanged(jbt.execution.core.event.TaskEvent)
-	 */
-
-		/**
-	 * Returns the current status of the task.
-	 * 
-	 * @return the current status of the task.
-	 */
-
-		public Status GetStatus()
-		{
-			return _status;
-		}
-
-		/**
-	 * Returns the BTExecutor of this ExecutionTask.
-	 * 
-	 * @return the BTExecutor of this ExecutionTask.
-	 */
-
-		public BTExecutor Executor
-		{
-			get { return _executor; }
-		}
-
-		/**
-	 * Returns the ModelTask associated to this ExecutionTask.
-	 * 
-	 * @return the ModelTask associated to this ExecutionTask.
-	 */
-
-		public ModelTask ModelTask
-		{
-			get { return _modelTask; }
-		}
-
-		/**
-	 * Returns the position of the ExecutionTask in the execution tree. Note
-	 * that such position is not necessarily that of the underlying ModelTask.
-	 * 
-	 * @return the position of the ExecutionTask in the execution tree.
-	 */
-
-		public Position Position
-		{
-			get { return _position; }
-		}
-
-		/**
-	 * Returns true if the task has been spawned, and false otherwise.
-	 * 
-	 * @return true if the task has been spawned, and false otherwise.
-	 */
-
-		public bool Spawned
-		{
-			get { return _spawnable == false; }
-		}
-
-		/**
-	 * Returns true if the task has been terminated, and false otherwise.
-	 * 
-	 * @return true if the task has been terminated, and false otherwise.
-	 */
-
-		public bool HasTerminated
-		{
-			get { return _terminated; }
-		}
-
-		/**
 	 * Terminates the execution of this task and all the tasks below it.
 	 * <p>
 	 * When this method is called, the task is marked as terminated. From then
@@ -684,7 +649,7 @@ namespace DisciplineOak.Execution.Core
 		{
 			foreach (ITaskListener taskListener in _listeners)
 			{
-				taskListener.StatusChanged(new TaskEvent(this, newStatus, GetStatus()));
+				taskListener.StatusChanged(new TaskEvent(this, newStatus, Status));
 			}
 		}
 

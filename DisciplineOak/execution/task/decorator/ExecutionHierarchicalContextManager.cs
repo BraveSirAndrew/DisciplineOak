@@ -79,7 +79,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 
 		protected override Status InternalTick()
 		{
-			return _child.GetStatus();
+			return _child.Status;
 		}
 
 		/**

@@ -40,6 +40,9 @@ namespace DisciplineOak.Execution.Core
 {
 	public class BTExecutor : IBTExecutor
 	{
+		public event EventHandler TickStarted;
+		public event EventHandler TickCompleted;
+
 		/** The root task of the BT this executor is running. */
 		/** The context that will be passed to the root task. */
 
@@ -167,6 +170,11 @@ namespace DisciplineOak.Execution.Core
 			_tasksStates = new Dictionary<Position, ITaskState>();
 		}
 
+		public List<ExecutionTask> TickableTasks
+		{
+			get { return new List<ExecutionTask>(_tickableTasks); }
+		}
+
 		public void Tick()
 		{
 			/*
@@ -189,6 +197,7 @@ namespace DisciplineOak.Execution.Core
 			if (currentStatus == Status.Running || currentStatus == Status.Uninitialized)
 			{
 				ProcessInsertionsAndRemovals();
+				OnTickStarted();
 
 				if (firstTimeTicked)
 				{
@@ -204,6 +213,7 @@ namespace DisciplineOak.Execution.Core
 					}
 				}
 
+				OnTickCompleted();
 				ProcessInsertionsAndRemovals();
 			}
 		}
@@ -227,7 +237,7 @@ namespace DisciplineOak.Execution.Core
 			{
 				return Status.Uninitialized;
 			}
-			return _executionBT.GetStatus();
+			return _executionBT.Status;
 		}
 
 		public IContext GetRootContext()
@@ -516,6 +526,22 @@ namespace DisciplineOak.Execution.Core
 		public override string ToString()
 		{
 			return "[Root: " + _modelBT.GetType().Name + ", Status: " + GetStatus() + "]";
+		}
+
+		private void OnTickStarted()
+		{
+			var handler = TickStarted;
+
+			if (handler != null)
+				handler(this, EventArgs.Empty);
+		}
+
+		private void OnTickCompleted()
+		{
+			var handler = TickCompleted;
+
+			if (handler != null)
+				handler(this, EventArgs.Empty);
 		}
 	}
 }

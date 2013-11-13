@@ -180,7 +180,7 @@ namespace DisciplineOak.Execution.Task.Composite
 
 			foreach (ExecutionTask child in _executionChildren)
 			{
-				Status currentStatus = child.GetStatus();
+				Status currentStatus = child.Status;
 				if (currentStatus == Status.Running)
 				{
 					oneRunning = true;
@@ -217,7 +217,7 @@ namespace DisciplineOak.Execution.Task.Composite
 
 			foreach (ExecutionTask child in _executionChildren)
 			{
-				Status currentStatus = child.GetStatus();
+				Status currentStatus = child.Status;
 				if (currentStatus == Status.Success)
 				{
 					sequencePolicyTerminate();
