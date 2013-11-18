@@ -20,28 +20,14 @@ namespace DisciplineOak.Model.Task.Composite
 {
 	public class ModelSequence : ModelComposite
 	{
-		/**
-	 * Constructor.
-	 * <p>
-	 * Constructs a ModeSequence with some children. A ModeSequence must have at
-	 * least one child.
-	 * 
-	 * @param guard
-	 *            the guard of the ModeSequence, which may be null.
-	 * @param children
-	 *            the list of children. Must have at least one element.
-	 */
 
-		public ModelSequence(ModelTask guard, params ModelTask[] children) : base(guard, children)
+		///	 Constructs a ModeSequence with some children. A ModeSequence must have at
+		///	 least one child.
+		public ModelSequence(ModelTask guard, params ModelTask[] children)
+			: base(guard, children)
 		{
 		}
 
-		/**
-	 * Returns an ExecutionSequence that can run this ModelSequence.
-	 * 
-	 * @see jbt.model.core.ModelTask#createExecutor(jbt.execution.core.BTExecutor,
-	 *      ExecutionTask)
-	 */
 
 		public override ExecutionTask CreateExecutor(BTExecutor executor, ExecutionTask parent)
 		{

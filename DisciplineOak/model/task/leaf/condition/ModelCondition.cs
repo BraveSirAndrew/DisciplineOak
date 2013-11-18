@@ -13,13 +13,6 @@ namespace DisciplineOak.Model.Task.Leaf.Condition
 {
 	public abstract class ModelCondition : ModelLeaf
 	{
-		/**
-	 * Constructs a ModelCondition.
-	 * 
-	 * @param guard
-	 *            the guard of the ModelCondition, which may be null.
-	 */
-
 		protected ModelCondition(ModelTask guard) : base(guard)
 		{
 		}

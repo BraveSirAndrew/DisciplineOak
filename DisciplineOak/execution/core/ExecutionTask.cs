@@ -85,10 +85,10 @@ namespace DisciplineOak.Execution.Core
 		 *            the tree.
 		 */
 
-		protected ExecutionTask(ModelTask modelTask, BTExecutor executor, ExecutionTask parent)
+		protected ExecutionTask(ModelTask modelTask, IBTExecutor executor, ExecutionTask parent)
 		{
 			_modelTask = modelTask;
-			_executor = executor;
+			_executor = executor as BTExecutor;
 			_listeners = new List<ITaskListener>();
 			_spawnable = true;
 			_tickable = false;

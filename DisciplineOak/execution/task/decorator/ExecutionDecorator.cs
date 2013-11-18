@@ -27,7 +27,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 	 *            the parent ExecutionTask of this task.
 	 */
 
-		public ExecutionDecorator(ModelTask modelTask, BTExecutor executor, ExecutionTask parent)
+		public ExecutionDecorator(ModelTask modelTask, IBTExecutor executor, ExecutionTask parent)
 			: base(modelTask, executor, parent)
 		{
 			if (!(modelTask is ModelDecorator))

@@ -27,7 +27,7 @@ namespace DisciplineOak.Execution.Task.Composite
 	 *            the parent ExecutionTask of this task.
 	 */
 
-		public ExecutionComposite(ModelTask modelTask, BTExecutor executor, ExecutionTask parent)
+		protected ExecutionComposite(ModelTask modelTask, IBTExecutor executor, ExecutionTask parent)
 			: base(modelTask, executor, parent)
 		{
 			if (!(modelTask is ModelComposite))

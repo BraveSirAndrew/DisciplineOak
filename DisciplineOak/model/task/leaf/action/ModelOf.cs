@@ -1,6 +1,5 @@
 ﻿using System;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Execution.Task.Leaf.Action;
 using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Model.Task.Leaf.Action
@@ -11,9 +10,8 @@ namespace DisciplineOak.Model.Task.Leaf.Action
 	/// ModelAction
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public class ModelOf<T> : ModelAction where T : ExecutionAction
+	public class ModelOf<T> : ModelAction where T : ExecutionTask
 	{
-
 		public ModelOf(ModelTask guard)
 			: base(guard)
 		{
@@ -25,4 +23,5 @@ namespace DisciplineOak.Model.Task.Leaf.Action
 			return executionAction;
 		}
 	}
+
 }

@@ -8,7 +8,7 @@
 
 using System;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Model.Core;
+
 using DisciplineOak.Model.Task.Leaf.Action;
 
 namespace DisciplineOak.Execution.Task.Leaf.Action
@@ -26,13 +26,12 @@ namespace DisciplineOak.Execution.Task.Leaf.Action
 	 *            the parent ExecutionTask of this task.
 	 */
 
-		protected ExecutionAction(ModelTask modelTask, BTExecutor executor, ExecutionTask parent)
+		protected ExecutionAction(ModelAction modelTask, BTExecutor executor, ExecutionTask parent)
 			: base(modelTask, executor, parent)
 		{
-			if (modelTask != null && !(modelTask is ModelAction))
+			if (modelTask == null )
 			{
-				throw new ArgumentException("The ModelTask must subclass ModelAction but it inherits from " +
-				                            modelTask.GetType().Name);
+				throw new ArgumentException("The ModelTask must not be null" );
 			}
 		}
 

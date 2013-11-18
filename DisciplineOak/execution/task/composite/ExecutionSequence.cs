@@ -1,13 +1,4 @@
-﻿/**
- * ExecutionSequence is the ExecutionTask that knows how to run a ModelSequence
- * task.
- * 
- 
- * 
- */
-
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Core.Events;
 using DisciplineOak.Model.Core;
@@ -33,15 +24,9 @@ namespace DisciplineOak.Execution.Task.Composite
 	 * @param parent
 	 *            the parent ExecutionTask of this task.
 	 */
-
-		public ExecutionSequence(ModelTask modelTask, BTExecutor executor, ExecutionTask parent)
+		public ExecutionSequence(ModelSequence modelTask, BTExecutor executor, ExecutionTask parent)
 			: base(modelTask, executor, parent)
 		{
-			if (!(modelTask is ModelSequence))
-			{
-				throw new ArgumentException("The ModelTask must subclass " + typeof (ModelSequence).Name + " but it inherits from " +
-				                            modelTask.GetType().Name);
-			}
 		}
 
 		/**
@@ -49,12 +34,8 @@ namespace DisciplineOak.Execution.Task.Composite
 	 * 
 	 * @see jbt.execution.core.ExecutionTask#internalSpawn()
 	 */
-
 		protected override void InternalSpawn()
 		{
-			/*
-		 * Spawn the first child of the sequence.
-		 */
 			_activeChildIndex = 0;
 			_children = ModelTask.Children;
 			_activeChild = _children[0].CreateExecutor(Executor, this);
@@ -80,10 +61,7 @@ namespace DisciplineOak.Execution.Task.Composite
 		 * returns {@link Status#FAILURE}. If it has finished successfully, it
 		 * checks if there is any remaining child. If so, it spawns it. Otherwise,
 		 * returns {@link Status#SUCCESS}.
-		 * 
-		 * @see jbt.execution.core.ExecutionTask#internalTick()
 		 */
-
 		protected override Status InternalTick()
 		{
 			Status childStatus = _activeChild.Status;
@@ -113,11 +91,6 @@ namespace DisciplineOak.Execution.Task.Composite
 			return Status.Running;
 		}
 
-		/**
-	 * Does nothing.
-	 * 
-	 * @see jbt.execution.core.ExecutionTask#restoreState(ITaskState)
-	 */
 
 		protected override void RestoreState(ITaskState state)
 		{
@@ -126,32 +99,20 @@ namespace DisciplineOak.Execution.Task.Composite
 		/**
 	 * Just calls {@link #tick()} to check if the ExecutionSequence can evolve
 	 * due to the change in the state of the task that was listening to.
-	 * 
-	 * @see jbt.execution.core.ExecutionTask#statusChanged(jbt.execution.core.event.TaskEvent)
+	 * 	 
 	 */
-
 		public override void StatusChanged(TaskEvent e)
 		{
 			Tick();
 		}
 
-		/**
-	 * Does nothing.
-	 * 
-	 * @see jbt.execution.core.ExecutionTask#storeState()
-	 */
 
 		protected override ITaskState StoreState()
 		{
 			return null;
 		}
 
-		/**
-	 * Does nothing.
-	 * 
-	 * @see jbt.execution.core.ExecutionTask#storeTerminationState()
-	 */
-
+	
 		protected override ITaskState StoreTerminationState()
 		{
 			return null;

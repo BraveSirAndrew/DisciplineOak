@@ -6,9 +6,7 @@
  * 
  */
 
-using System;
 using DisciplineOak.Execution.Core;
-using DisciplineOak.Model.Core;
 using DisciplineOak.Model.Task.Leaf.Condition;
 
 namespace DisciplineOak.Execution.Task.Leaf.Condition
@@ -26,13 +24,10 @@ namespace DisciplineOak.Execution.Task.Leaf.Condition
 		 *            the parent ExecutionTask of this task.
 		 */
 
-		protected ExecutionCondition(ModelTask modelTask, BTExecutor executor, ExecutionTask parent)
+		protected ExecutionCondition(ModelCondition modelTask, BTExecutor executor, ExecutionTask parent)
 			: base(modelTask, executor, parent)
 		{
-			if (!(modelTask is ModelCondition))
-			{
-				throw new ArgumentException("The ModelTask must subclass ModelCondition but it inherits from " + modelTask.GetType().Name);
-			}
+			
 		}
 	}
 }

@@ -15,17 +15,15 @@ namespace DisciplineOak.Execution.Core
 {
 	public class TaskStateFactory
 	{
-		/**
-	 * Creates an ITaskState that contains the set of variables specified by
-	 * <code>variables</code>. Each variable is a Tuple whose first element is
-	 * the variable's name and the second element is its value.
-	 * 
-	 * @param variables
-	 *            the list of variables that the ITaskState will contain.
-	 * @return an ITaskState that contains the set of variables in
-	 *         <code>variables</code>.
-	 */
 
+		//	 * Creates an ITaskState that contains the set of variables specified by
+		//	 * <code>variables</code>. Each variable is a Tuple whose first element is
+		//	 * the variable's name and the second element is its value.
+		//	 * 
+		//	 * @param variables
+		//	 *            the list of variables that the ITaskState will contain.
+		//	 * @return an ITaskState that contains the set of variables in
+		//	 *         <code>variables</code>.
 		public static ITaskState CreateTaskState(List<Tuple<string, Object>> variables)
 		{
 			var taskState = new TaskState();

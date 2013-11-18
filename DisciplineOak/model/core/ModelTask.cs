@@ -146,7 +146,7 @@ namespace DisciplineOak.Model.Core
 			 */
 			for (var i = 0; i < _children.Count; i++)
 			{
-				var currentChild = _children[i];
+				ModelTask currentChild = _children[i];
 				var currentChildPos = new Position(_position);
 				currentChildPos.AddMove(i);
 				currentChild._position = currentChildPos;
