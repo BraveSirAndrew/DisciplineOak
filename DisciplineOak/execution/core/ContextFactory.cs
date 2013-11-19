@@ -3,7 +3,6 @@
  * of the framework to create instances of {@link IContext} objects that can be
  * used when running behaviour trees.
  * 
- 
  * 
  */
 
@@ -25,7 +24,6 @@ namespace DisciplineOak.Execution.Core
 	 * @return a new empty context that contains all the behaviour trees
 	 *         specified in <code>library</code>.
 	 */
-
 		public static IContext CreateContext(IBTLibrary library)
 		{
 			var result = new BasicContext();
@@ -43,7 +41,6 @@ namespace DisciplineOak.Execution.Core
 	 * @return a new empty context that contains all the behaviour trees in the
 	 *         libraries <code>libraries</code>.
 	 */
-
 		public static IContext CreateContext(List<IBTLibrary> libraries)
 		{
 			var result = new BasicContext();
