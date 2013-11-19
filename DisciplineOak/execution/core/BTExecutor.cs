@@ -149,7 +149,6 @@ namespace DisciplineOak.Execution.Core
 		 * @param modelBT
 		 *            the root of the behaviour tree to run.
 		 */
-
 		public BTExecutor(ModelTask modelBT)
 		{
 			if (modelBT == null)
@@ -157,8 +156,8 @@ namespace DisciplineOak.Execution.Core
 				throw new ArgumentException("The input ModelTask cannot be null");
 			}
 
-			this._modelBT = modelBT;
-			this._modelBT.ComputePositions();
+			_modelBT = modelBT;
+			_modelBT.ComputePositions();
 			_context = new BasicContext();
 			_tickableTasks = new List<ExecutionTask>();
 			_openTasks = new List<ExecutionTask>();

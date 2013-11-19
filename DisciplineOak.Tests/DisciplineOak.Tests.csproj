@@ -39,7 +39,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExecutionInterrupterTests.cs" />
     <Compile Include="ExecutionSequenceTests.cs" />
     <Compile Include="MyAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

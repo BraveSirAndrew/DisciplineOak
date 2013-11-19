@@ -12,15 +12,19 @@ namespace DisciplineOak.Model.Task.Leaf.Action
 	/// <typeparam name="T"></typeparam>
 	public class ModelOf<T> : ModelAction where T : ExecutionTask
 	{
+		private T _executionAction;
+
 		public ModelOf(ModelTask guard)
 			: base(guard)
 		{
 		}
 
+		public T Action {get { return _executionAction; }}
+
 		public override ExecutionTask CreateExecutor(BTExecutor executor, ExecutionTask parent)
 		{
-			var executionAction = (T)Activator.CreateInstance(typeof(T), this, executor, parent);
-			return executionAction;
+			_executionAction = (T)Activator.CreateInstance(typeof(T), this, executor, parent);
+			return _executionAction;
 		}
 	}
 

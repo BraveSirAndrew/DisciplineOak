@@ -11,6 +11,7 @@ namespace DisciplineOak.Tests
 		public MyAction(ModelAction modelTask, BTExecutor executor, ExecutionTask parent)
 			: base(modelTask, executor, parent)
 		{
+			ReturnStatusForInternalTick = Status.Running;
 		}
 
 		protected override void InternalSpawn()
@@ -22,19 +23,21 @@ namespace DisciplineOak.Tests
 
 		public bool WasSpawned { get; private set; }
 
+		public Status ReturnStatusForInternalTick { get; set; }
+
 		protected override Status InternalTick()
 		{
-			return Status.Running;
+			return ReturnStatusForInternalTick;
 		}
 
 		protected override ITaskState StoreState()
 		{
-			throw new NotImplementedException();
+			return null;
 		}
 
 		protected override ITaskState StoreTerminationState()
 		{
-			throw new NotImplementedException();
+			return null;
 		}
 
 		protected override void RestoreState(ITaskState state)

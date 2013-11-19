@@ -22,6 +22,23 @@ namespace DisciplineOak.Tests
 			Assert.AreEqual(1, executor.TickableTasks.Count);
 		}
 
+		[Test]
+		public void When_failed_then_return()
+		{
+			var myfailingAction = new ModelOf<MyAction>(null);
+
+			var modelSequence = new ModelSequence(null,
+				myfailingAction,
+				new ModelOf<MyAction>(null));
+			var executor = BTExecutorFactory.CreateBTExecutor(modelSequence);
+			
+			executor.Tick();
+			myfailingAction.Action.ReturnStatusForInternalTick = Status.Failure;
+			executor.Tick();
+			executor.Tick();
+
+			Assert.AreEqual(Status.Failure, executor.GetStatus());
+		}
 
 	}
 }
