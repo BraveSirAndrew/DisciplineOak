@@ -48,7 +48,6 @@ namespace DisciplineOak.Execution.Task.Composite
 		 * 
 		 * @see jbt.execution.core.ExecutionTask#internalTerminate()
 		 */
-
 		protected override void InternalTerminate()
 		{
 			/* Just terminate the active child. */

@@ -107,7 +107,8 @@
     <Compile Include="Model\Task\Decorator\ModelSucceeder.cs" />
     <Compile Include="Model\Task\Decorator\ModelUntilFail.cs" />
     <Compile Include="Model\Task\Leaf\Action\ModelAction.cs" />
-    <Compile Include="Model\Task\Leaf\Action\ModelOf.cs" />
+    <Compile Include="Model\Task\Leaf\Action\ModelOfAction.cs" />
+    <Compile Include="Model\Task\Leaf\Action\ModelOfCondition.cs" />
     <Compile Include="Model\Task\Leaf\Condition\ModelCondition.cs" />
     <Compile Include="Model\Task\Leaf\ModelFailure.cs" />
     <Compile Include="Model\Task\Leaf\ModelLeaf.cs" />

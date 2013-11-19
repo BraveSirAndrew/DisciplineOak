@@ -12,8 +12,8 @@ namespace DisciplineOak.Tests
 		public void When_running_then_one_tickable()
 		{
 			var modelSequence = new ModelSequence(null,
-				new ModelOf<MyAction>(null),
-				new ModelOf<MyAction>(null));
+				new ModelOfAction<MyAction>(null),
+				new ModelOfAction<MyAction>(null));
 			var executor = BTExecutorFactory.CreateBTExecutor(modelSequence);
 
 			executor.Tick();
@@ -25,11 +25,11 @@ namespace DisciplineOak.Tests
 		[Test]
 		public void When_failed_then_return()
 		{
-			var myfailingAction = new ModelOf<MyAction>(null);
+			var myfailingAction = new ModelOfAction<MyAction>(null);
 
 			var modelSequence = new ModelSequence(null,
 				myfailingAction,
-				new ModelOf<MyAction>(null));
+				new ModelOfAction<MyAction>(null));
 			var executor = BTExecutorFactory.CreateBTExecutor(modelSequence);
 			
 			executor.Tick();

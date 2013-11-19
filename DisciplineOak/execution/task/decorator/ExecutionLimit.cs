@@ -117,8 +117,9 @@ namespace DisciplineOak.Execution.Task.Decorator
 			{
 				_numRunsSoFar = (int) state.GetStateVariable(StateVariableName);
 			}
-			catch (System.Exception e)
+			catch
 			{
+
 			}
 		}
 

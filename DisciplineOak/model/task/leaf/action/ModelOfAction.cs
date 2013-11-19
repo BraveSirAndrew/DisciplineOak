@@ -10,11 +10,11 @@ namespace DisciplineOak.Model.Task.Leaf.Action
 	/// ModelAction
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	public class ModelOf<T> : ModelAction where T : ExecutionTask
+	public class ModelOfAction<T> : ModelAction where T : ExecutionTask
 	{
 		private T _executionAction;
 
-		public ModelOf(ModelTask guard)
+		public ModelOfAction(ModelTask guard)
 			: base(guard)
 		{
 		}
@@ -27,5 +27,4 @@ namespace DisciplineOak.Model.Task.Leaf.Action
 			return _executionAction;
 		}
 	}
-
 }

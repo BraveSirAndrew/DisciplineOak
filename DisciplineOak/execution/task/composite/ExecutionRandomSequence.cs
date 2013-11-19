@@ -21,22 +21,23 @@ namespace DisciplineOak.Execution.Task.Composite
 		/**
 	 * Currently active child.
 	 */
-		private ExecutionTask activeChild;
+		private ExecutionTask _activeChild;
 		/**
 	 * The currently active child of the sequence. This integer is an index over
 	 * the elements of {@link #order}.
 	 */
-		private int activeChildIndex;
+		private int _activeChildIndex;
 		/**
 	 * The list of children of this task.
 	 */
-		private List<ModelTask> children;
+		private List<ModelTask> _children;
 		/**
 	 * List storing a sequence of integers with the order in which the children
 	 * of this task must be evaluated. This list is computed when the task is
 	 * spawned.
 	 */
-		private List<int> order;
+		private List<int> _order;
+		private Random _random;
 
 		/**
 	 * Constructs an ExecutionRandomSequence to run a specific
@@ -68,27 +69,27 @@ namespace DisciplineOak.Execution.Task.Composite
 
 		protected override void InternalSpawn()
 		{
-			children = ModelTask.Children;
+			_children = ModelTask.Children;
 			/*
 		 * First we initialize the list with the order in which the list of
 		 * children will be evaluated.
 		 */
-			order = new List<int>();
-			for (int i = 0; i < children.Count; i++)
+			_order = new List<int>();
+			for (int i = 0; i < _children.Count; i++) 
 			{
-				order.Add(i);
+				_order.Add(i);
 			}
 
-			var rnd = new Random();
-			order = order.OrderBy(i => rnd.Next()).ToList();
+			_random = _random ?? new Random();
+			_order = _order.OrderBy(i => _random.Next()).ToList();
 
 			/*
 		 * Then we spawn the first child.
 		 */
-			activeChildIndex = 0;
-			activeChild = children[order[activeChildIndex]].CreateExecutor(Executor, this);
-			activeChild.AddTaskListener(this);
-			activeChild.Spawn(Context);
+			_activeChildIndex = 0;
+			_activeChild = _children[_order[_activeChildIndex]].CreateExecutor(Executor, this);
+			_activeChild.AddTaskListener(this);
+			_activeChild.Spawn(Context);
 		}
 
 		/**
@@ -99,7 +100,7 @@ namespace DisciplineOak.Execution.Task.Composite
 
 		protected override void InternalTerminate()
 		{
-			activeChild.Terminate();
+			_activeChild.Terminate();
 		}
 
 		/**
@@ -114,7 +115,7 @@ namespace DisciplineOak.Execution.Task.Composite
 
 		protected override Status InternalTick()
 		{
-			Status childStatus = activeChild.Status;
+			Status childStatus = _activeChild.Status;
 
 			if (childStatus == Status.Running)
 			{
@@ -123,15 +124,15 @@ namespace DisciplineOak.Execution.Task.Composite
 			if (childStatus == Status.Success)
 			{
 				/* If it was the last child of the sequence, returns success. */
-				if (activeChildIndex == children.Count - 1)
+				if (_activeChildIndex == _children.Count - 1)
 				{
 					return Status.Success;
 				}
 
-				activeChildIndex++;
-				activeChild = children[order[activeChildIndex]].CreateExecutor(Executor, this);
-				activeChild.AddTaskListener(this);
-				activeChild.Spawn(Context);
+				_activeChildIndex++;
+				_activeChild = _children[_order[_activeChildIndex]].CreateExecutor(Executor, this);
+				_activeChild.AddTaskListener(this);
+				_activeChild.Spawn(Context);
 				return Status.Running;
 			}
 			return Status.Failure;
