@@ -28,7 +28,10 @@ namespace DisciplineOak.Execution.Context
 
 		public object this[string name]
 		{
-			get { return _variables[name]; }
+			get
+			{
+				return _variables.ContainsKey(name) == false ? null : _variables[name];
+			}
 		}
 
 		public bool SetVariable(string name, Object value)
