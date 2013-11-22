@@ -31,7 +31,7 @@ namespace DisciplineOak.Execution.Core
 		 * @return the value of a variable whose name is <code>name</code>, or null
 		 *         if it does not exist.
 		 */
-		Object this[string name] { get; }
+		object this[string name] { get; }
 		
 		/**
 		 * Sets the value of a variable. If the variable already existed, its value

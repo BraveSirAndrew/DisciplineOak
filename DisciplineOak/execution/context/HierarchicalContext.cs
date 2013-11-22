@@ -43,7 +43,7 @@ namespace DisciplineOak.Execution.Context
 		 * is returned.
 		 */
 
-		public new object this[string name]
+		public override object this[string name]
 		{
 			get
 			{

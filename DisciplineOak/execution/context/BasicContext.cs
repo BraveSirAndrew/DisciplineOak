@@ -26,7 +26,7 @@ namespace DisciplineOak.Execution.Context
 			_library = new GenericBTLibrary();
 		}
 
-		public object this[string name]
+		public virtual object this[string name]
 		{
 			get
 			{
