@@ -220,7 +220,7 @@ namespace DisciplineOak.Execution.Task.Composite
 				Status currentStatus = child.Status;
 				if (currentStatus == Status.Success)
 				{
-					sequencePolicyTerminate();
+					selectorPolicyTerminate();
 					return Status.Success;
 				}
 				if (currentStatus == Status.Running)
