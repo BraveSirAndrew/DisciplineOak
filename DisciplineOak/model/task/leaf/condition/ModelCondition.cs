@@ -16,5 +16,10 @@ namespace DisciplineOak.Model.Task.Leaf.Condition
 		protected ModelCondition(ModelTask guard) : base(guard)
 		{
 		}
+
+		protected ModelCondition(ModelTask guard, string name)
+			: base(guard, name)
+		{
+		}
 	}
 }

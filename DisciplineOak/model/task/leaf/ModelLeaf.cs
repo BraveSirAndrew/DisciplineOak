@@ -13,5 +13,10 @@ namespace DisciplineOak.Model.Task.Leaf
 		protected ModelLeaf(ModelTask guard) : base(guard)
 		{
 		}
+
+		protected ModelLeaf(ModelTask guard, string name) 
+			: base(guard, name)
+		{
+		}
 	}
 }

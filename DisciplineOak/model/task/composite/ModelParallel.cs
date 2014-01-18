@@ -39,7 +39,13 @@ namespace DisciplineOak.Model.Task.Composite
 		 * @param children
 		 *            the list of children. Must have at least one element.
 		 */
-		public ModelParallel(ModelTask guard, ParallelPolicy policy, params ModelTask[] children) : base(guard, children)
+		public ModelParallel(ModelTask guard, ParallelPolicy policy, params ModelTask[] children)
+			: this(guard, policy, null, children)
+		{
+		}
+
+		public ModelParallel(ModelTask guard, ParallelPolicy policy, string name, params ModelTask[] children)
+			: base(guard, name, children)
 		{
 			this._policy = policy;
 		}

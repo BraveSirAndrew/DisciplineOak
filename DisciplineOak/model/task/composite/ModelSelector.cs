@@ -32,7 +32,13 @@ namespace DisciplineOak.Model.Task.Composite
 	 *            the list of children. Must have at least one element.
 	 */
 
-		public ModelSelector(ModelTask guard, params ModelTask[] children) : base(guard, children)
+		public ModelSelector(ModelTask guard, params ModelTask[] children) 
+			: this(guard, null, children)
+		{
+		}
+
+		public ModelSelector(ModelTask guard, string name, params ModelTask[] children)
+			: base(guard, name, children)
 		{
 		}
 

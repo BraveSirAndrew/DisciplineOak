@@ -24,7 +24,12 @@ namespace DisciplineOak.Model.Task.Composite
 		///	 Constructs a ModeSequence with some children. A ModeSequence must have at
 		///	 least one child.
 		public ModelSequence(ModelTask guard, params ModelTask[] children)
-			: base(guard, children)
+			: this(guard, null, children)
+		{
+		}
+
+		public ModelSequence(ModelTask guard, string name, params ModelTask[] children)
+			: base(guard, name, children)
 		{
 		}
 

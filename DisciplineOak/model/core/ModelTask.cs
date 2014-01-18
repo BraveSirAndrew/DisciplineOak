@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using DisciplineOak.Execution.Core;
 
 namespace DisciplineOak.Model.Core
@@ -48,6 +50,7 @@ namespace DisciplineOak.Model.Core
 		private readonly ModelTask _guard;
 		/** The position of the ModelTask in the behaviour tree. */
 		private Position _position;
+		private string _name;
 
 		/**
 		 * Creates a new ModelTask with a guard and several children. The guard may
@@ -60,8 +63,15 @@ namespace DisciplineOak.Model.Core
 		 *            the list of children.
 		 */
 		protected ModelTask(ModelTask guard, params ModelTask[] children)
+			:this(guard, null, children)
+		{
+			
+		}
+
+		protected ModelTask(ModelTask guard, string name, params ModelTask[] children)
 		{
 			_guard = guard;
+			_name = name;
 			_children = new List<ModelTask>();
 
 			foreach (var modelTask in children)
@@ -70,6 +80,18 @@ namespace DisciplineOak.Model.Core
 			}
 
 			_position = new Position();
+		}
+
+		public string Name
+		{
+			get
+			{
+				if (string.IsNullOrEmpty(_name))
+					return GetTypeName(GetType());
+	
+				return _name;
+			}
+			set { _name = value; }
 		}
 
 		/**
@@ -82,6 +104,7 @@ namespace DisciplineOak.Model.Core
 		 * 
 		 * @return the list of children of this task.
 		 */
+
 		public List<ModelTask> Children
 		{
 			get { return _children; }
@@ -197,6 +220,7 @@ namespace DisciplineOak.Model.Core
 		 * @param t
 		 *            the task whose descendants will be computed their positions.
 		 */
+
 		private void RecursiveComputePositions(ModelTask t)
 		{
 			/*
@@ -211,6 +235,26 @@ namespace DisciplineOak.Model.Core
 				currentChild._position = currentChildPos;
 				RecursiveComputePositions(currentChild);
 			}
+		}
+
+		private static string GetTypeName(Type t)
+		{
+			if (!t.IsGenericType)
+				return t.Name;
+			
+			if (t.DeclaringType != null && (t.IsNested && t.DeclaringType.IsGenericType))
+				return t.Name;  // not perfect, but the other option is throwing an exception and 
+			
+			var typeName = new StringBuilder(t.Name.Substring(0, t.Name.IndexOf('`')) + "<");
+			var count = 0;
+			foreach (var arg in t.GetGenericArguments())
+			{
+				if (count > 0)
+					typeName.Append(", ");
+				typeName.Append(GetTypeName(arg));
+				count++;
+			}
+			return typeName.Append(">").ToString();
 		}
 	}
 }

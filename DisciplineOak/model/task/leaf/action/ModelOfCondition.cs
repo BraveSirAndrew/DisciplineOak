@@ -14,6 +14,11 @@ namespace DisciplineOak.Model.Task.Leaf.Action
 		{
 		}
 
+		public ModelOfCondition(ModelTask guard, string name)
+			: base(guard, name)
+		{
+		}
+
 		public T Action { get { return _executionAction; } }
 
 		public override ExecutionTask CreateExecutor(BTExecutor executor, ExecutionTask parent)

@@ -6,7 +6,7 @@ namespace DisciplineOak.Model.Task.Leaf.Action
 {
 	/// <summary>
 	/// Use this as the default Model using generic types like ModelOf<YourExecutionAction> 
-	/// If you need to have a more complex model, then you should create a new class tht inherits from 
+	/// If you need to have a more complex model, then you should create a new class that inherits from 
 	/// ModelAction
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
@@ -16,6 +16,11 @@ namespace DisciplineOak.Model.Task.Leaf.Action
 
 		public ModelOfAction(ModelTask guard)
 			: base(guard)
+		{
+		}
+
+		public ModelOfAction(ModelTask guard, string name)
+			: base(guard, name)
 		{
 		}
 

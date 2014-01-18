@@ -23,5 +23,10 @@ namespace DisciplineOak.Model.Task.Leaf.Action
 		protected ModelAction(ModelTask guard) : base(guard)
 		{
 		}
+
+		protected ModelAction(ModelTask guard, string name)
+			: base(guard, name)
+		{
+		}
 	}
 }
