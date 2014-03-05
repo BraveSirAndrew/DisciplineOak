@@ -9,6 +9,7 @@
  * 
  */
 
+using System.Collections.Generic;
 using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Execution.Core
@@ -24,6 +25,8 @@ namespace DisciplineOak.Execution.Core
 	 * @return the behaviour tree whose name is <code>name</code>, or null in
 	 *         case it does not exist.
 	 */
-		ModelTask getBT(string name);
+		ModelTask GetBT(string name);
+
+		Dictionary<string, ModelTask> GetAllTrees();
 	}
 }

@@ -34,7 +34,7 @@ namespace DisciplineOak.Execution.Core
 
 			foreach (var btLibrary in libraries)
 			{
-				result.addBTLibrary(btLibrary);
+				result.AddBTLibrary(btLibrary);
 			}
 
 			return result;
@@ -66,7 +66,7 @@ namespace DisciplineOak.Execution.Core
 
 			while (treesIterator.MoveNext() && namesIterator.MoveNext())
 			{
-				result.addBT(namesIterator.Current, treesIterator.Current);
+				result.AddBT(namesIterator.Current, treesIterator.Current);
 			}
 
 			return result;

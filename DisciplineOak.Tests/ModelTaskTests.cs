@@ -34,23 +34,6 @@ namespace DisciplineOak.Tests
 				Assert.AreEqual("TurtlePants", task.Name);
 			}
 
-			private class TestTask : ModelTask
-			{
-				public TestTask(ModelTask guard, params ModelTask[] children) : base(guard, children)
-				{
-				}
-
-				public TestTask(ModelTask guard, string name, params ModelTask[] children)
-					: base(guard, name, children)
-				{
-				}
-
-				public override ExecutionTask CreateExecutor(BTExecutor executor, ExecutionTask parent)
-				{
-					return null;
-				}
-			}
-
 			private class GenericTestTask<T, U> : TestTask where T:ExecutionTask
 			{
 				public GenericTestTask(ModelTask guard, params ModelTask[] children)
