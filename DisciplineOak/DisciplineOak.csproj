@@ -35,6 +35,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Debugger\BehaviourDebugger.cs" />
+    <Compile Include="Debugger\IBehaviourDebugger.cs" />
     <Compile Include="Exceptions\IllegalReturnStatusException.cs" />
     <Compile Include="Exceptions\NotTickableException.cs" />
     <Compile Include="Exceptions\SpawnException.cs" />

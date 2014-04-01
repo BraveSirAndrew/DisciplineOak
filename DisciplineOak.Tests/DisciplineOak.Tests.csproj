@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Context\BasicContextTests.cs" />
     <Compile Include="Context\HierarchicalContextTests.cs" />
+    <Compile Include="Debugger\BehaviourDebuggerTests.cs" />
     <Compile Include="ExecutionSequenceTests.cs" />
     <Compile Include="ModelTaskTests.cs" />
     <Compile Include="MyAction.cs" />
