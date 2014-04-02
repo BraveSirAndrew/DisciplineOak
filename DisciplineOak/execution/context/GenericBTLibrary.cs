@@ -63,6 +63,9 @@ namespace DisciplineOak.Execution.Context
 
 		public bool AddBTLibrary(IBTLibrary library)
 		{
+			if (library == null)
+				return false;
+
 			var overwritten = false;
 
 			foreach (var tuple in library.GetAllTrees())
