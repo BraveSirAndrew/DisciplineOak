@@ -18,7 +18,7 @@ namespace DisciplineOak.Execution.Context
 		/**
 	 * The hashtable that stores all the trees of the library.
 	 */
-		private readonly Dictionary<string, ModelTask> trees;
+		private readonly Dictionary<string, ModelTask> _trees;
 
 		/**
 	 * Constructs a GenericBTLibrary containing no trees.
@@ -26,7 +26,7 @@ namespace DisciplineOak.Execution.Context
 
 		public GenericBTLibrary()
 		{
-			trees = new Dictionary<string, ModelTask>();
+			_trees = new Dictionary<string, ModelTask>();
 		}
 
 		/**
@@ -34,23 +34,18 @@ namespace DisciplineOak.Execution.Context
 	 * @see jbt.execution.core.IBTLibrary#getBT(java.lang.string)
 	 */
 
-		public ModelTask getBT(string name)
+		public ModelTask GetBT(string name)
 		{
-			return trees[name];
+			ModelTask task = null;
+
+			_trees.TryGetValue(name, out task);
+
+			return task;
 		}
 
-		/**
-	 * Returns a read-only iterator through the behaviour trees of the library.
-	 * While this iterator is being used, the library cannot be modified.
-	 * Otherwise, the results are undefined. Note that both trees and their
-	 * names can be accessed through this iterator.
-	 * 
-	 * @see java.lang.Iterable#iterator()
-	 */
-
-		public Dictionary<string, ModelTask> iterator()
+		public Dictionary<string, ModelTask> GetAllTrees()
 		{
-			return new Dictionary<string, ModelTask>(trees);
+			return new Dictionary<string, ModelTask>(_trees);
 		}
 
 		/**
@@ -66,20 +61,15 @@ namespace DisciplineOak.Execution.Context
 	 *         and false otherwise.
 	 */
 
-		public bool addBTLibrary(IBTLibrary library)
+		public bool AddBTLibrary(IBTLibrary library)
 		{
 			var overwritten = false;
 
-//			foreach (var tuple in library)
-//			{
-//				
-//			}
-//
-//			for (Tuple<string, ModelTask> tree : library) {
-//				if (this.trees.put(tree.getFirst(), tree.getSecond()) != null) {
-//					overwritten = true;
-//				}
-//			}
+			foreach (var tuple in library.GetAllTrees())
+			{
+				if(AddBT(tuple.Key, tuple.Value))
+					overwritten = true;
+			}
 
 			return overwritten;
 		}
@@ -98,14 +88,18 @@ namespace DisciplineOak.Execution.Context
 	 *         false otherwise.
 	 */
 
-		public bool addBT(string name, ModelTask tree)
+		public bool AddBT(string name, ModelTask tree)
 		{
-//			if (this.trees.put(name, tree) != null) {
-//				return true;
-//			}
-//			else {
-			return false;
-//			}
+			bool overwritten = false;
+			if (_trees.ContainsKey(name))
+			{
+				overwritten = true;
+				_trees.Remove(name);
+			}
+
+			_trees.Add(name, tree);
+
+			return overwritten;
 		}
 	}
 }

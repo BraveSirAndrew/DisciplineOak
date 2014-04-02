@@ -63,7 +63,7 @@ namespace DisciplineOak.Execution.Context
 
 		public ModelTask GetBT(string name)
 		{
-			return _library.getBT(name);
+			return _library.GetBT(name);
 		}
 
 		/**
@@ -81,7 +81,7 @@ namespace DisciplineOak.Execution.Context
 
 		public bool AddBTLibrary(IBTLibrary library)
 		{
-			return _library.addBTLibrary(library);
+			return _library.AddBTLibrary(library);
 		}
 
 		/**
@@ -99,7 +99,7 @@ namespace DisciplineOak.Execution.Context
 	 */
 		public bool AddBT(string name, ModelTask tree)
 		{
-			return _library.addBT(name, tree);
+			return _library.AddBT(name, tree);
 		}
 	}
 }
