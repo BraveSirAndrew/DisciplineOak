@@ -42,6 +42,7 @@
 
 using System;
 using System.Collections.Generic;
+using DisciplineOak.Debugger;
 using DisciplineOak.Exceptions;
 using DisciplineOak.Execution.Core.Events;
 using DisciplineOak.Model.Core;
@@ -342,6 +343,8 @@ namespace DisciplineOak.Execution.Core
 			}
 
 			_status = newStatus;
+
+			BehaviourDebugger.LogTick(this);
 
 			/*
 			 * If the task has finished (either successfully or in failure), a

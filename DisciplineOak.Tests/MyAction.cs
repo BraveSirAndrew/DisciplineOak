@@ -1,5 +1,4 @@
-﻿using System;
-using DisciplineOak.Execution.Core;
+﻿using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Leaf.Action;
 
 using DisciplineOak.Model.Task.Leaf.Action;
