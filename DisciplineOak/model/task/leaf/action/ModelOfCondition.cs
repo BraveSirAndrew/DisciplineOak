@@ -5,10 +5,11 @@ using DisciplineOak.Model.Task.Leaf.Condition;
 
 namespace DisciplineOak.Model.Task.Leaf.Action
 {
+	[Serializable]
 	public class ModelOfCondition<T> : ModelCondition where T : ExecutionTask
 	{
 		private T _executionAction;
-		 
+
 		public ModelOfCondition(ModelTask guard)
 			: base(guard)
 		{

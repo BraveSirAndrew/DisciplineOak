@@ -7,12 +7,14 @@
  * 
  */
 
+using System;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Composite;
 using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Model.Task.Composite
 {
+	[Serializable]
 	public class ModelRandomSelector : ModelComposite
 	{
 		/**

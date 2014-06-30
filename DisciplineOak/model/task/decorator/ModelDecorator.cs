@@ -22,10 +22,12 @@
  * 
  */
 
+using System;
 using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Model.Task.Decorator
 {
+	[Serializable]
 	public abstract class ModelDecorator : ModelTask
 	{
 		/**

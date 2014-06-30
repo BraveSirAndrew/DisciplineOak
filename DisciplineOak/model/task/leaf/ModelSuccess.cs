@@ -5,12 +5,14 @@
  * 
  */
 
+using System;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Leaf;
 using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Model.Task.Leaf
 {
+	[Serializable]
 	public class ModelSuccess : ModelLeaf
 	{
 		/**

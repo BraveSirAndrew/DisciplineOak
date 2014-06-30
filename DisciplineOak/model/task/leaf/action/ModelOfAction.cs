@@ -10,6 +10,7 @@ namespace DisciplineOak.Model.Task.Leaf.Action
 	/// ModelAction
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
+	[Serializable]
 	public class ModelOfAction<T> : ModelAction where T : ExecutionTask
 	{
 		private T _executionAction;

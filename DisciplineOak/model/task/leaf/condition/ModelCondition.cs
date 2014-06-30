@@ -7,10 +7,12 @@
  * 
  */
 
+using System;
 using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Model.Task.Leaf.Condition
 {
+	[Serializable]
 	public abstract class ModelCondition : ModelLeaf
 	{
 		protected ModelCondition(ModelTask guard) : base(guard)

@@ -10,12 +10,14 @@
  * 
  */
 
+using System;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Decorator;
 using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Model.Task.Decorator
 {
+	[Serializable]
 	public class ModelUntilFail : ModelDecorator
 	{
 		/**

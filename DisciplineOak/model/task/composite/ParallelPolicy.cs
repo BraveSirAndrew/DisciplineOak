@@ -1,5 +1,8 @@
-﻿namespace DisciplineOak.Model.Task.Composite
+﻿using System;
+
+namespace DisciplineOak.Model.Task.Composite
 {
+	[Serializable]
 	public enum ParallelPolicy
 	{
 		/**

@@ -1,4 +1,5 @@
-﻿using DisciplineOak.Execution.Core;
+﻿using System;
+using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Decorator;
 using DisciplineOak.Model.Core;
 
@@ -12,6 +13,7 @@ namespace DisciplineOak.Model.Task.Decorator
 	///ModelInterrupter can be asked to terminate the child task and return an
 	///specified status when done so.
 	/// </summary>
+	[Serializable]
 	public class ModelInterrupter : ModelDecorator
 	{
 		public ModelInterrupter(ModelTask guard, ModelTask child)

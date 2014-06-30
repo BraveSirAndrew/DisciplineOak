@@ -7,10 +7,12 @@
  * 
  */
 
+using System;
 using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Model.Task.Leaf.Action
 {
+	[Serializable]
 	public abstract class ModelAction : ModelLeaf
 	{
 		/**

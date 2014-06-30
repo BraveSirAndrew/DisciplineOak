@@ -12,12 +12,14 @@
  * 
  */
 
+using System;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Leaf;
 using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Model.Task.Leaf
 {
+	[Serializable]
 	public class ModelSubtreeLookup : ModelLeaf
 	{
 		/** The name of the tree that this task is going to emulate. */

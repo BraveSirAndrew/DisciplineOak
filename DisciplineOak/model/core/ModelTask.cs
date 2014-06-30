@@ -39,15 +39,16 @@ namespace DisciplineOak.Model.Core
 	///
 	///@see ExecutionTask
 	///@see BTExecutor
+	[Serializable]
 	public abstract class ModelTask
 	{
 		/** List of the children of the ModelTask. */
-		private readonly List<ModelTask> _children;
+		private readonly List<ModelTask> _children = new List<ModelTask>();
 		/**
 		 * The guard of the ModelTask. It may be null, in which case it will always
 		 * be evaluated to true.
 		 */
-		private readonly ModelTask _guard;
+		private ModelTask _guard;
 		/** The position of the ModelTask in the behaviour tree. */
 		private Position _position;
 		private string _name;
@@ -119,6 +120,7 @@ namespace DisciplineOak.Model.Core
 		public ModelTask Guard
 		{
 			get { return _guard; }
+			set { _guard = value; }
 		}
 
 		/**

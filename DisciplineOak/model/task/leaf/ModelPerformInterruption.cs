@@ -9,6 +9,7 @@
  * 
  */
 
+using System;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Leaf;
 using DisciplineOak.Model.Core;
@@ -16,6 +17,7 @@ using DisciplineOak.Model.Task.Decorator;
 
 namespace DisciplineOak.Model.Task.Leaf
 {
+	[Serializable]
 	public class ModelPerformInterruption : ModelLeaf
 	{
 		private readonly Status _desiredResult;

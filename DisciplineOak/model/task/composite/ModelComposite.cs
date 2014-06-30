@@ -11,6 +11,7 @@ using DisciplineOak.Model.Core;
 
 namespace DisciplineOak.Model.Task.Composite
 {
+	[Serializable]
 	public abstract class ModelComposite : ModelTask
 	{
 		/**
