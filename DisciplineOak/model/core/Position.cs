@@ -16,6 +16,7 @@ namespace DisciplineOak.Model.Core
 	 
 	 * 
 	 */
+	[Serializable]
 	public class Position
 	{
 		/**
