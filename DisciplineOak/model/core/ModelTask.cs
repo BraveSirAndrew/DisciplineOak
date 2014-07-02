@@ -95,6 +95,8 @@ namespace DisciplineOak.Model.Core
 			set { _name = value; }
 		}
 
+		public virtual string Description { get; set; }
+
 		/**
 		 * Returns the list of children of this task, or an empty list if it has no
 		 * children. It should be noted that the children of a task are ordered, and

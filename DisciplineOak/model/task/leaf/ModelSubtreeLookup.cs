@@ -23,7 +23,7 @@ namespace DisciplineOak.Model.Task.Leaf
 	public class ModelSubtreeLookup : ModelLeaf
 	{
 		/** The name of the tree that this task is going to emulate. */
-		private readonly string _treeName;
+		private string _treeName;
 
 		/**
 		 * Constructor.
@@ -48,6 +48,7 @@ namespace DisciplineOak.Model.Task.Leaf
 		public string TreeName
 		{
 			get { return _treeName; }
+			set { _treeName = value; }
 		}
 
 		/**
