@@ -28,7 +28,7 @@ namespace DisciplineOak.Model.Task.Composite
 	public class ModelParallel : ModelComposite
 	{
 		/** Policy of this ModelParallel task. */
-		private readonly ParallelPolicy _policy;
+		private ParallelPolicy _policy;
 
 		/**
 		 * Creates a ModelParallel task with a guard, a policy and a list of
@@ -60,6 +60,7 @@ namespace DisciplineOak.Model.Task.Composite
 		public ParallelPolicy Policy
 		{
 			get { return _policy; }
+			set { _policy = value; }
 		}
 
 		/**
