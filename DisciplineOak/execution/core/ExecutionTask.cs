@@ -97,6 +97,9 @@ namespace DisciplineOak.Execution.Core
 			_status = Status.Uninitialized;
 			_parent = parent;
 
+			if(_modelTask != null)
+				AlwaysFail = modelTask.AlwaysFail;
+
 			/* Compute the position of this node. */
 			if (parent == null)
 			{
@@ -109,6 +112,8 @@ namespace DisciplineOak.Execution.Core
 				_position.AddMove(nextMove);
 			}
 		}
+
+		public bool AlwaysFail { get; set; }
 
 		public Status Status
 		{
@@ -334,7 +339,7 @@ namespace DisciplineOak.Execution.Core
 				return Status.Terminated;
 
 			/* Otherwise, perform the actual tick by calling "internalTick()". */
-			var newStatus = InternalTick();
+			var newStatus = AlwaysFail ? Status.Failure : InternalTick();
 
 			/* Check if the value that is returned by "internalTick()" is valid. */
 			if (!ValidInternalTickStatus(newStatus))

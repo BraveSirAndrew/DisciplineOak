@@ -48,6 +48,7 @@
     <Compile Include="Context\HierarchicalContextTests.cs" />
     <Compile Include="Debugger\BehaviourDebuggerTests.cs" />
     <Compile Include="ExecutionSequenceTests.cs" />
+    <Compile Include="ExecutionTaskTests.cs" />
     <Compile Include="ModelTaskTests.cs" />
     <Compile Include="MyAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
