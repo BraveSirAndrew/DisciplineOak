@@ -10,11 +10,12 @@ using System;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Leaf;
 using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Leaf.Action;
 
 namespace DisciplineOak.Model.Task.Leaf
 {
 	[Serializable]
-	public class ModelVariableRenamer : ModelLeaf
+	public class ModelVariableRenamer : ModelAction
 	{
 		/** The name of the variable that must be renamed. */
 		/** The new name for the variable that must be renamed. */

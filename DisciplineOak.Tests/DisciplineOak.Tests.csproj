@@ -49,6 +49,8 @@
     <Compile Include="Debugger\BehaviourDebuggerTests.cs" />
     <Compile Include="ExecutionSequenceTests.cs" />
     <Compile Include="ExecutionTaskTests.cs" />
+    <Compile Include="Execution\Core\BTExecutorTests.cs" />
+    <Compile Include="Execution\Task\Decorator\ExecutionInterrupterTests.cs" />
     <Compile Include="ModelTaskTests.cs" />
     <Compile Include="MyAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

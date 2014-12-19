@@ -12,11 +12,12 @@ using System;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Leaf;
 using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Leaf.Action;
 
 namespace DisciplineOak.Model.Task.Leaf
 {
 	[Serializable]
-	public class ModelWait : ModelLeaf
+	public class ModelWait : ModelAction
 	{
 		/**
 		 * Duration, measured in milliseconds, of the period of time the task will

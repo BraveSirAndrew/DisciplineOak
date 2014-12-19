@@ -16,11 +16,12 @@ using System;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Leaf;
 using DisciplineOak.Model.Core;
+using DisciplineOak.Model.Task.Leaf.Action;
 
 namespace DisciplineOak.Model.Task.Leaf
 {
 	[Serializable]
-	public class ModelSubtreeLookup : ModelLeaf
+	public class ModelSubtreeLookup : ModelAction
 	{
 		/** The name of the tree that this task is going to emulate. */
 		private string _treeName;

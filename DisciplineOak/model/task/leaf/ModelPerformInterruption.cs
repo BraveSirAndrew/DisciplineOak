@@ -10,17 +10,19 @@
  */
 
 using System;
+using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Task.Leaf;
 using DisciplineOak.Model.Core;
 using DisciplineOak.Model.Task.Decorator;
+using DisciplineOak.Model.Task.Leaf.Action;
 
 namespace DisciplineOak.Model.Task.Leaf
 {
 	[Serializable]
-	public class ModelPerformInterruption : ModelLeaf
+	public class ModelPerformInterruption : ModelAction
 	{
-		private readonly Status _desiredResult;
+		private Status _desiredResult;
 
 		/**
 		 * Constructor.
@@ -35,14 +37,14 @@ namespace DisciplineOak.Model.Task.Leaf
 		 *            is interrupted.
 		 */
 
-		public ModelPerformInterruption(ModelTask guard, ModelInterrupter interrupter, Status desiredResult)
+		public ModelPerformInterruption(ModelTask guard, Status desiredResult)
 			: base(guard)
 		{
-			Interrupter = interrupter;
+			Interrupters = new List<ModelInterrupter>();
 			_desiredResult = desiredResult;
 		}
 
-		public ModelInterrupter Interrupter { get; set; }
+		public List<ModelInterrupter> Interrupters { get; set; }
 
 		/**
 		 * Returns the result that the ModelInterrupter should return in case it is
@@ -54,6 +56,7 @@ namespace DisciplineOak.Model.Task.Leaf
 		public Status DesiredResult
 		{
 			get { return _desiredResult; }
+			set { _desiredResult = value; }
 		}
 
 		/**

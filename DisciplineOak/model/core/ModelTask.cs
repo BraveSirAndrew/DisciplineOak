@@ -130,6 +130,13 @@ namespace DisciplineOak.Model.Core
 			set { _guard = value; }
 		}
 
+		/// <summary>
+		/// When an Interrupter node is interrupted, it will execute this branch before
+		/// terminating the node. Use this to clean up any state that might have been
+		/// set by the execution of the branch.
+		/// </summary>
+		public ModelTask Interrupter { get; set; }
+
 		/**
 		 * Returns the position that this task occupies in the behaviour tree. If it
 		 * has not been computed yet (see {@link #computePositions()}), it returns a

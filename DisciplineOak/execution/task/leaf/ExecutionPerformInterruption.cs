@@ -49,16 +49,14 @@ namespace DisciplineOak.Execution.Task.Leaf
 		protected override void InternalSpawn()
 		{
 			Executor.RequestInsertionIntoList(BTExecutor.BTExecutorList.Tickable, this);
-			/*
-			 * First, retrieve the ExecutionInterrupter that is going to be
-			 * interrupted.
-			 */
-			var interrupter = Executor.GetExecutionInterrupter(((ModelPerformInterruption) ModelTask).Interrupter);
-
-			/* If we could find the ExecutionInterrupter, interrupt it. */
-			if (interrupter != null)
+			
+			foreach (var modelInterrupter in ((ModelPerformInterruption)ModelTask).Interrupters)
 			{
-				interrupter.Interrupt(((ModelPerformInterruption) ModelTask).DesiredResult);
+				var interrupter = Executor.GetExecutionInterrupter(modelInterrupter);
+				if (interrupter != null)
+				{
+					interrupter.Interrupt(((ModelPerformInterruption)ModelTask).DesiredResult);
+				}
 			}
 		}
 

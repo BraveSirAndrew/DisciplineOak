@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using DisciplineOak.Execution.Core;
 using DisciplineOak.Execution.Core.Events;
+using DisciplineOak.Execution.Task.Decorator;
 using DisciplineOak.Model.Core;
 using DisciplineOak.Model.Task.Composite;
 
@@ -247,6 +248,12 @@ namespace DisciplineOak.Execution.Task.Composite
 				 * If the child with the highest priority guard has changed, terminate the currently
 				 * active child.
 				 */
+				if (_activeChild.ModelTask.Interrupter != null)
+				{
+					var executor = new BTExecutor(_activeChild.ModelTask.Interrupter, Context);
+					ExecutionInterrupter.RunInterrupterBranch(executor, 10);
+				}
+
 				_activeChild.Terminate();
 				_activeChildIndex = activeGuard.Item2;
 

@@ -24,7 +24,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 			_interrupted = false;
 		}
 
-		
+
 		///Spawns its child and registers itself into the list of interrupters of
 		///the BTExecutor.
 		///
@@ -32,7 +32,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 		{
 			_executionChild = ((ModelInterrupter)ModelTask).getChild().CreateExecutor(Executor, this);
 			_executionChild.AddTaskListener(this);
-			
+
 			//Register the ExecutionInterrupter so that ExecutionPerformInterruption can find it.
 			Executor.RegisterInterrupter(this);
 			_executionChild.Spawn(Context);
@@ -41,7 +41,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 		///
 		///Terminates the child task and unregister itself from the list of
 		///interrupters of the BTExecutor.
-		
+
 		protected override void InternalTerminate()
 		{
 			///
@@ -69,12 +69,12 @@ namespace DisciplineOak.Execution.Task.Decorator
 		///If the ExecutionInterrupter has been interrupted, returns the status that
 		///was passed to the {@link #interrupt(Status)} method. Otherwise, returns
 		///the current status of the child task.
-		
+
 		protected override Status InternalTick()
 		{
 			if (_interrupted)
 			{
-				
+
 				///Unregister the ExecutionInterrupter so that it is no longer
 				///available to ExecutionPerformInterruption.
 				Executor.UnregisterInterrupter(this);
@@ -102,7 +102,7 @@ namespace DisciplineOak.Execution.Task.Decorator
 		{
 			Tick();
 		}
-		
+
 		protected override ITaskState StoreState()
 		{
 			return null;
@@ -123,9 +123,8 @@ namespace DisciplineOak.Execution.Task.Decorator
 		///@param status
 		///           the status that the ExecutionInterrupter will return.
 		///
-		
-		
-		
+
+
 		public void Interrupt(Status status)
 		{
 			if (!_interrupted)
@@ -151,10 +150,14 @@ namespace DisciplineOak.Execution.Task.Decorator
 						throw new ArgumentException("The specified status is not valid. Must be either Status.FAILURE or Status.SUCCESS");
 					}
 
-					///
+					if (_executionChild.ModelTask.Interrupter != null)
+					{
+						var executor = new BTExecutor(_executionChild.ModelTask.Interrupter, Context);
+						RunInterrupterBranch(executor, ((ModelInterrupter)ModelTask).NumInterrupterBranchTicks + 1);
+					}
+
 					_executionChild.Terminate();
 
-					///
 					///It is very important for the ExecutionInterrupter to be
 					///inserted into the list of tickable nodes. If not, after being
 					///interrupted, it will not inform its parent about the
@@ -163,7 +166,6 @@ namespace DisciplineOak.Execution.Task.Decorator
 					///will leave the list of tickable nodes in the next AI cycle),
 					///so it has to be the interrupter itself that informs its
 					///parent about termination.
-					///
 					Executor.RequestInsertionIntoList(BTExecutor.BTExecutorList.Tickable, this);
 					_interrupted = true;
 					_statusSet = status;
@@ -174,6 +176,16 @@ namespace DisciplineOak.Execution.Task.Decorator
 		protected override ITaskState StoreTerminationState()
 		{
 			return null;
+		}
+
+		public static void RunInterrupterBranch(IBTExecutor executor, int numTicks)
+		{
+			var counter = 0;
+			do
+			{
+				executor.Tick();
+				counter++;
+			} while (executor.GetStatus() == Status.Running && counter < numTicks);
 		}
 	}
 }
