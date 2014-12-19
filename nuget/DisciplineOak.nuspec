@@ -2,16 +2,18 @@
 <package>
     <metadata>
         <id>DisciplineOak</id>
-        <version>0.1.0.0</version>
+        <version>@build.number@</version>
+        <authors>@authors@</authors>
+        <owners>@authors@</owners>
         <title>Discipline Oak</title>
-        <authors>@batcatgames</authors>
-        <owners />
         <projectUrl>https://github.com/BraveSirAndrew/DisciplineOak</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Discipline Oak, a behaviour tree Library in C#</description>
+        <summary>@summary@</summary>
+         <tags>@tags@</tags>
+        <description>@description@</description>
         <language>en-IE</language>
     </metadata>    
     <files>
-        <file src="DisciplineOak\bin\Release\DisciplineOak.dll" target="lib\net40\DisciplineOak.dll" />                
+        <file src="..\DisciplineOak\bin\Release\DisciplineOak.dll" target="lib/net40" />                
     </files>
 </package>
