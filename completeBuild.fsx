@@ -78,9 +78,9 @@ Target "CreatePackage" (fun _ ->
     NuGet (fun p -> 
         {p with
             Authors = ["@batcatGames"]
-            Project = info.Name
+            Project = "DisciplineOak"
             Description = info.Description                                           
-            OutputPath = deployDir
+            OutputPath = deployDir            
             ToolPath = nugetPath
             Summary = info.Description            
             Tags = "behaviour-tree behavior-tree AI"           
