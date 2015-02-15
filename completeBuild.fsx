@@ -54,7 +54,7 @@ Target "RestorePackages" (fun _ ->
 
 Target "Compile" (fun _ ->
     !! @"**\*.csproj"
-      |> MSBuildRelease buildDir "Build"      
+      |> MSBuildRelease "" "Build"      
       |> Log "AppBuild-Output: "
       
 )
@@ -79,7 +79,7 @@ Target "CreatePackage" (fun _ ->
         {p with
             Authors = ["@batcatGames"]
             Project = info.Name
-            Description = info.Description                               
+            Description = info.Description                                           
             OutputPath = deployDir
             ToolPath = nugetPath
             Summary = info.Description            
