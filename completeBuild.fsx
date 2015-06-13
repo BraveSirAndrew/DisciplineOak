@@ -13,10 +13,10 @@ let testDir   = @".\test\"
 let deployDir = @".\deploy\"
 let packagesDir = @".\packages"
 
+// version info
+let version = "0.2"  // or retrieve from CI server
 
 // Project info
-let authors = ["Andrew O'Connor";"Andrea Magnorsky"]
-let projectName = "Discipline Oak"
 type ProjectInfo = { 
     Name: string;
     Description: string; 
@@ -25,8 +25,10 @@ type ProjectInfo = {
 let info = {
   Name="Discipline Oak";
   Description =  "Discipline Oak, behaviour tree library";
-  Version = if isLocalBuild then "0.1-local" else "0.2"+buildVersion
+  Version = version
 }
+
+let nugetSource = "https://www.myget.org/F/6416d9912a7c4d46bc983870fb440d25/"
 
 // Targets
 Target "Clean" (fun _ ->
@@ -42,11 +44,19 @@ Target "SetVersions" (fun _ ->
          Attribute.FileVersion info.Version]
 )
 
+Target "RestorePackages" (fun _ -> 
+     "./**/packages.config"
+     |> RestorePackage (fun p ->
+         { p with
+             Sources = nugetSource :: p.Sources             
+             Retries = 4 })
+ )
 
 Target "Compile" (fun _ ->
     !! @"**\*.csproj"
       |> MSBuildRelease "" "Build"      
       |> Log "AppBuild-Output: "
+      
 )
 
 Target "CompileTest" (fun _ ->
@@ -67,8 +77,8 @@ Target "CreatePackage" (fun _ ->
     let nugetPath = ".nuget/NuGet.exe"
     NuGet (fun p -> 
         {p with
-            Authors = authors
-            Project = projectName            
+            Authors = ["@batcatGames"]
+            Project = "DisciplineOak"
             Description = info.Description                                           
             OutputPath = deployDir            
             ToolPath = nugetPath
@@ -81,24 +91,6 @@ Target "CreatePackage" (fun _ ->
             "nuget/DisciplineOak.nuspec"
 )
 
-Target "AndroidPack" (fun _ ->    
-    let nugetPath = ".nuget/NuGet.exe"
-    NuGet (fun p -> 
-        {p with
-            Authors = authors
-            Project = projectName+"Android"
-            Description = info.Description                                           
-            OutputPath = deployDir            
-            ToolPath = nugetPath
-            Summary = info.Description            
-            Tags = "behaviour-tree behavior-tree AI"           
-            PublishUrl = getBuildParamOrDefault "nugetrepo" ""
-            AccessKey = getBuildParamOrDefault "nugetkey" ""            
-            Publish = hasBuildParam "nugetkey"  
-            }) 
-            "nuget/DisciplineOak.Android.nuspec"
-)
-
 
 // Dependencies
 "Clean"
@@ -107,11 +99,6 @@ Target "AndroidPack" (fun _ ->
   ==> "CompileTest"
   ==> "NUnitTest"
   ==> "CreatePackage"
-
-"Clean"
-  ==> "SetVersions"
-  ==> "Compile"
-  ==> "AndroidPack"
 
 // start build
 RunTargetOrDefault "CreatePackage"
