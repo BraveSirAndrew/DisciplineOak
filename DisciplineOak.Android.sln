@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineOak", "DisciplineOak\DisciplineOak.csproj", "{5F5C4120-6128-4600-8DFE-5A2C497E9228}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineOak.Tests", "DisciplineOak.Tests\DisciplineOak.Tests.csproj", "{A844C68A-D386-4281-A77A-DEDFF388BC2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F034FC15-2621-4036-938C-F75D8B9EC78A}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{2AFBAAE9-26DC-4045-B6AB-C3129BC715E6}"
+	ProjectSection(SolutionItems) = preProject
+		completeBuild.fsx = completeBuild.fsx
+		nuget\DisciplineOak.Android.nuspec = nuget\DisciplineOak.Android.nuspec
+		nuget\DisciplineOak.nuspec = nuget\DisciplineOak.nuspec
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineOak.Android", "DisciplineOak\DisciplineOak.Android.csproj", "{0F7C905E-CC6F-4862-AF35-245FF5CF11DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F5C4120-6128-4600-8DFE-5A2C497E9228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5C4120-6128-4600-8DFE-5A2C497E9228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5C4120-6128-4600-8DFE-5A2C497E9228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5C4120-6128-4600-8DFE-5A2C497E9228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A844C68A-D386-4281-A77A-DEDFF388BC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A844C68A-D386-4281-A77A-DEDFF388BC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A844C68A-D386-4281-A77A-DEDFF388BC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A844C68A-D386-4281-A77A-DEDFF388BC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F7C905E-CC6F-4862-AF35-245FF5CF11DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F7C905E-CC6F-4862-AF35-245FF5CF11DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F7C905E-CC6F-4862-AF35-245FF5CF11DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F7C905E-CC6F-4862-AF35-245FF5CF11DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
